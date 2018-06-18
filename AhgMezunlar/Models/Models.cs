@@ -44,6 +44,7 @@ namespace AhgMezunlar.Models
         public string Email { get; set; }
         public int Phone { get; set; }
         public string Content { get; set; }
+        public bool ReadIt { get; set; }
     }
     
 }
