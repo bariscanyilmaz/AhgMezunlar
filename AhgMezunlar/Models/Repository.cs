@@ -18,7 +18,7 @@ namespace AhgMezunlar.Models
 
         public Model Get()
         {
-            return dbContext.Models.FirstOrDefault();
+            return new Model();
         }
 
        

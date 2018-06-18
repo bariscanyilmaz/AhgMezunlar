@@ -32,7 +32,7 @@ namespace AhgMezunlar
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
-            services.AddTransient<IRepository, Repository>();
+            
             services.AddMvc();
 
         }

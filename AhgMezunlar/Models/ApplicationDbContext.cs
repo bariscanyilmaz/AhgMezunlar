@@ -19,7 +19,10 @@ namespace AhgMezunlar.Models
 
         }
 
-        public DbSet<Model> Models { get; set; }
+        public DbSet<SliderImage> SliderImages { get; set; }
+        public DbSet<Moments> Moments { get; set; }
+        public DbSet<ContactForm> Contacts { get; set; }
+        public DbSet<Events> Events { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
