@@ -8,5 +8,6 @@ namespace AhgMezunlar.ViewComponents
 {
     public class MomentsViewComponent:ViewComponent
     {
+
     }
 }

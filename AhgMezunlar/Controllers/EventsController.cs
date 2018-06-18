@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AhgMezunlar.Controllers
 {
-    public class MomentController : Controller
+    public class EventsController : Controller
     {
         public IActionResult Index()
         {

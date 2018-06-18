@@ -17,17 +17,17 @@
         <header id="header" class="hoc clear">
             <div id="logo" class="fl_left">
                 <h1>
-                    <a href="index.html">AHMET HAMDİ GÖKBAYRAK</a>
+                    <a href="/">AHMET HAMDİ GÖKBAYRAK</a>
                 </h1>
                 <p>Anadolu Öğretmen ve Fen Lisesi Mezunları Derneği </p>
             </div>
             <nav id="mainav" class="fl_right">
                 <ul class="clear">
                     <li class="active">
-                        <a href="index.html">Ana sayfa</a>
+                        <a href="/">Ana sayfa</a>
                     </li>
                     <li>
-                        <a class="drop" href="dernek.html">Derneğimiz</a>
+                        <a class="drop" href="/Society">Derneğimiz</a>
                         <ul>
                             <li>
                                 <a href="pages/gallery.html">tüzük</a>
@@ -47,13 +47,13 @@
                         <a href="#contact">İletişim</a>
                     </li>
                     <li>
-                        <a href="anilarimiz.html">Anılarımız</a>
+                        <a href="/Moment">Anılarımız</a>
                     </li>
                     <li>
-                        <a href="duyurular.html">Duyurularımız</a>
+                        <a href="/Event">Duyurularımız</a>
                     </li>
                     <li>
-                        <a href="admin.html"><i class="fa fa-2x fa-sign-in"></i></a>
+                        <a href="/Admin"><i class="fa fa-2x fa-sign-in"></i></a>
                     </li>
                 </ul>
             </nav>
@@ -108,7 +108,37 @@
         @RenderBody()
     </div>
 
-    @RenderSection("contactForm",false)
+    <!-- Cotntact form -->
+    <div id="contact" class="container">
+        <form class="form mx-auto">
+            <h4>İletişim Formu</h4>
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label for="name">Adı Soyadı</label>
+                    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Adınız Soyadınız">
+                </div>
+                <div class="col-md-6">
+                    <label for="object">Konu</label>
+                    <input type="text" class="form-control form-control-lg " id="object" name="object" placeholder="Konu">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Email adresiniz">
+                </div>
+                <div class="col-md-6">
+                    <label for="phone">Telefon Numaranız</label>
+                    <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="Telefon Numaranız">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="message">Mesaj</label>
+                <textarea class="form-control form-control-lg" id="message" rows="5" placeholder="Mesajınız"></textarea>
+            </div>
+            <input type="submit" class="btn btn-success" />
+        </form>
+    </div>
 
     <!--Footer -->
     <div class="wrapper row4">
@@ -197,7 +227,7 @@
         $(document).ready(function () {
             insta();
         });
-        
+
     </script>
 </body>
 </html>
