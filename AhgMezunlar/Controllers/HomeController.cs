@@ -25,5 +25,7 @@ namespace AhgMezunlar.Controllers
         {
             return View(userManager.Users);
         }
+
+
     }
 }
