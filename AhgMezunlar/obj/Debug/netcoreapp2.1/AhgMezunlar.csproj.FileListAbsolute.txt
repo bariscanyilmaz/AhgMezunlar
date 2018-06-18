@@ -1,0 +1,11 @@
+D:\Projects\AhgMezunlar\AhgMezunlar\bin\Debug\netcoreapp2.1\AhgMezunlar.deps.json
+D:\Projects\AhgMezunlar\AhgMezunlar\bin\Debug\netcoreapp2.1\AhgMezunlar.runtimeconfig.json
+D:\Projects\AhgMezunlar\AhgMezunlar\bin\Debug\netcoreapp2.1\AhgMezunlar.runtimeconfig.dev.json
+D:\Projects\AhgMezunlar\AhgMezunlar\bin\Debug\netcoreapp2.1\AhgMezunlar.dll
+D:\Projects\AhgMezunlar\AhgMezunlar\bin\Debug\netcoreapp2.1\AhgMezunlar.pdb
+D:\Projects\AhgMezunlar\AhgMezunlar\obj\Debug\netcoreapp2.1\AhgMezunlar.csprojAssemblyReference.cache
+D:\Projects\AhgMezunlar\AhgMezunlar\obj\Debug\netcoreapp2.1\AhgMezunlar.csproj.CoreCompileInputs.cache
+D:\Projects\AhgMezunlar\AhgMezunlar\obj\Debug\netcoreapp2.1\AhgMezunlar.AssemblyInfoInputs.cache
+D:\Projects\AhgMezunlar\AhgMezunlar\obj\Debug\netcoreapp2.1\AhgMezunlar.AssemblyInfo.cs
+D:\Projects\AhgMezunlar\AhgMezunlar\obj\Debug\netcoreapp2.1\AhgMezunlar.dll
+D:\Projects\AhgMezunlar\AhgMezunlar\obj\Debug\netcoreapp2.1\AhgMezunlar.pdb

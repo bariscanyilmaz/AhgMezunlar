@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link href="~/css/framework.css" rel="stylesheet" />
+    <link href="~/lib/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/layout.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body id="top">
+    <!--Menubar-->
+    <div class="wrapper row1">
+        <header id="header" class="hoc clear">
+            <div id="logo" class="fl_left">
+                <h1>
+                    <a href="index.html">AHMET HAMDİ GÖKBAYRAK</a>
+                </h1>
+                <p>Anadolu Öğretmen ve Fen Lisesi Mezunları Derneği </p>
+            </div>
+            <nav id="mainav" class="fl_right">
+                <ul class="clear">
+                    <li class="active">
+                        <a href="index.html">Ana sayfa</a>
+                    </li>
+                    <li>
+                        <a class="drop" href="dernek.html">Derneğimiz</a>
+                        <ul>
+                            <li>
+                                <a href="pages/gallery.html">tüzük</a>
+                            </li>
+                            <li>
+                                <a href="pages/full-width.html">Yönetim kurulu</a>
+                            </li>
+                            <li>
+                                <a href="pages/sidebar-left.html">hakkımızda</a>
+                            </li>
+                            <li>
+                                <a href="pages/sidebar-right.html">Kurucu üye</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#contact">İletişim</a>
+                    </li>
+                    <li>
+                        <a href="anilarimiz.html">Anılarımız</a>
+                    </li>
+                    <li>
+                        <a href="duyurular.html">Duyurularımız</a>
+                    </li>
+                    <li>
+                        <a href="admin.html"><i class="fa fa-2x fa-sign-in"></i></a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="justify-content-end navbar-expand-mlg p-0 bg-tranparent navbar-light">
+                <!-- Toggler/collapsibe Button -->
+                <button id="toggle-button" class="navbar-toggler fl_right" type="button" data-toggle="collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: var(--custom-orange);" href="#">ANA SAYFA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">DERNEK</a>
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Hakkımızda</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Yönetim Kurulu</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Kurucu Üyeler</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Tüzük</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">İLETİŞİM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">ANILARIMIZ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">DUYURULARIMIZ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin.html"><i class="fa fa-2x fa-sign-in"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- manin -->
+        </header>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+
+    @RenderSection("contactForm",false)
+
+    <!--Footer -->
+    <div class="wrapper row4">
+        <footer id="footer" class="hoc clear">
+            <h3 class="heading">AHMET HAMDİ GÖKBAYRAK</h3>
+            <P>Anadolu ve Fen Lisesi Mezunları Derneği</P>
+            <ul class="faico clear">
+                <li>
+                    <a class="faicon-facebook" href="http://www.os-templates.com/free-website-templates">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="faicon-twitter" href="http://www.os-templates.com/free-website-templates">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="faicon-facebook" href="mailto:ahgaolmd@gmail.com">
+                        <i class="fa fa-envelope"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="faicon-linkedin" href="tel:531-454-9962">
+                        <i class="fa fa-phone"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="faicon-google-plus" href="http://www.os-templates.com/free-website-templates">
+                        <i class="fa fa-youtube"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="faicon-vk" href="http://www.os-templates.com/free-website-templates">
+                        <i class="fa fa-safari"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+
+    <!--shortcut buttons-->
+    <a id="backtotop" href="#top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+    <a id="gotofacebook" href="#top">
+        <i class="fa fa-facebook"></i>
+    </a>
+    <a id="gotoinstagram" href="#top">
+        <i class="fa fa-instagram"></i>
+    </a>
+
+    <!-- moments popup modal  -->
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.backtotop.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+            crossorigin="anonymous"></script>
+    <script src="~/js/instafeed.min.js"></script>
+    <script src="~/js/leftright.js"></script>
+    <script src="~/js/instagram.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.min.js"></script>
+    <script>
+        var scroll = new SmoothScroll('a[href*="#"]');
+
+        $(document).ready(function () {
+            insta();
+        });
+        
+    </script>
+</body>
+</html>
