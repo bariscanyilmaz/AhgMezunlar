@@ -14,7 +14,7 @@ namespace AhgMezunlar.Models.Abstract
         /// kullanılacak metot
         /// </summary>
         /// <param name="readit"></param>
-        void UpdateContact(bool readit);
+        void UpdateContact(bool readit, int contactId);
         
     }
 }

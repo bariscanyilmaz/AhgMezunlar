@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace AhgMezunlar.Models.Abstract
 {
-    interface IMomentsRepositorye
+    interface IMomentsRepository
     {
         IQueryable<Moments> GetMoments();
-        void DeleteMoment(int blogId);
+        void DeleteMoment(int momentId);
         void AddMoment(Moments moment);
         /// <summary>
         /// Anıların sadece yayınlanma durumlarına müdahale edileceği için 
@@ -16,7 +16,7 @@ namespace AhgMezunlar.Models.Abstract
         /// aynı şekilde contentler data-content olarak gömülecek
         /// </summary>
         /// <param name="show"></param>
-        void UpdateMoment(bool show);
+        void UpdateMoment(bool show,int momentId);
 
     }
 }
