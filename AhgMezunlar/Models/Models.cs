@@ -5,6 +5,14 @@ using System.Threading.Tasks;
 
 namespace AhgMezunlar.Models
 {
+    public class RegisterModel
+    {
+        public string Email { get; set; }
+        public string Role { get; set; }
+        public string Password { get; set; }
+    }
+
+
     public class SliderImage
     {
         public int Id { get; set; }

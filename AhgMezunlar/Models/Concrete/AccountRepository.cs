@@ -1,4 +1,5 @@
 ﻿using AhgMezunlar.Models.Abstract;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,34 +9,52 @@ namespace AhgMezunlar.Models.Concrete
 {
     public class AccountRepository : IAccountRepository
     {
-        public void AddUser(ApplicationUser user)
+        private UserManager<ApplicationUser> userManager;
+        private RoleManager<IdentityRole> roleManager;
+        private IPasswordValidator<ApplicationUser> passwordValidator;
+        private IPasswordHasher<ApplicationUser> passwordHasher;
+
+
+        public AccountRepository(UserManager<ApplicationUser> _userManager,
+                                RoleManager<IdentityRole> _roleManager,
+                                IPasswordValidator<ApplicationUser> _passwordValidator,
+                                IPasswordHasher<ApplicationUser> _passwordHasher)
         {
-            throw new NotImplementedException();
+            userManager = _userManager;
+            roleManager = _roleManager;
+            passwordHasher = _passwordHasher;
+            passwordValidator = _passwordValidator;
+        }
+
+
+        public void AddUser(RegisterModel registerModel)
+        {
+            
         }
 
         public void DeleteUser(string email)
         {
-            throw new NotImplementedException();
+            
         }
 
         public ApplicationUser GetUser(string email)
         {
-            throw new NotImplementedException();
+            
         }
 
         public IQueryable<ApplicationUser> GetUsers()
         {
-            throw new NotImplementedException();
+            
         }
 
-        public void SaveUser(ApplicationUser user)
+        public void SaveUser(RegisterModel registerModel)
         {
-            throw new NotImplementedException();
+            
         }
-
-        public void UpdateUser(ApplicationUser user)
+        
+        public void UpdateUser(RegisterModel registerModel)
         {
-            throw new NotImplementedException();
+                
         }
     }
 }

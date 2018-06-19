@@ -9,10 +9,10 @@ namespace AhgMezunlar.Models.Abstract
     {
         ApplicationUser GetUser(string email);
         IQueryable<ApplicationUser> GetUsers();
-        void AddUser(ApplicationUser user);
+        void AddUser(RegisterModel registerModel);
         void DeleteUser(string email);
-        void UpdateUser(ApplicationUser user);
-        void SaveUser(ApplicationUser user);
+        void UpdateUser(RegisterModel registerModel);
+        void SaveUser(RegisterModel registerModel);
 
     }
 }
