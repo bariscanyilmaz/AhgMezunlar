@@ -39,12 +39,12 @@ namespace AhgMezunlar.Models.Concrete
 
         public ApplicationUser GetUser(string email)
         {
-            
+            return null;
         }
 
         public IQueryable<ApplicationUser> GetUsers()
         {
-            
+            return null;
         }
 
         public void SaveUser(RegisterModel registerModel)

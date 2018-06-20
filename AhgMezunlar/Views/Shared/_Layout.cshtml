@@ -47,10 +47,10 @@
                         <a href="#contact">İletişim</a>
                     </li>
                     <li>
-                        <a href="/Moment">Anılarımız</a>
+                        <a href="/Moments">Anılarımız</a>
                     </li>
                     <li>
-                        <a href="/Event">Duyurularımız</a>
+                        <a href="/Events">Duyurularımız</a>
                     </li>
                     <li>
                         <a href="/Admin"><i class="fa fa-2x fa-sign-in"></i></a>
@@ -67,10 +67,10 @@
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" style="color: var(--custom-orange);" href="#">ANA SAYFA</a>
+                            <a class="nav-link" style="color: var(--custom-orange);" href="/">ANA SAYFA</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">DERNEK</a>
+                            <a class="nav-link" href="/Society">DERNEK</a>
                             <ul class="navbar-nav">
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Hakkımızda</a>
@@ -87,16 +87,16 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">İLETİŞİM</a>
+                            <a class="nav-link" href="#contact">İLETİŞİM</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">ANILARIMIZ</a>
+                            <a class="nav-link" href="/Moments">ANILARIMIZ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">DUYURULARIMIZ</a>
+                            <a class="nav-link" href="/Events">DUYURULARIMIZ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="admin.html"><i class="fa fa-2x fa-sign-in"></i></a>
+                            <a class="nav-link" href="/Admin"><i class="fa fa-2x fa-sign-in"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -104,9 +104,9 @@
             <!-- manin -->
         </header>
     </div>
-    <div>
-        @RenderBody()
-    </div>
+    <!--Body-->
+    @RenderBody()
+
 
     <!-- Cotntact form -->
     <div id="contact" class="container">
@@ -223,11 +223,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.min.js"></script>
     <script>
         var scroll = new SmoothScroll('a[href*="#"]');
-
-        $(document).ready(function () {
-            insta();
-        });
-
     </script>
+    <script>
+        $('#toggle-button').click(function () {
+            console.log('debug');
+            $('.collapse').toggleClass('show');
+        })
+    </script>
+    @RenderSection("scripts", false)
+
 </body>
 </html>

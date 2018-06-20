@@ -310,5 +310,48 @@
 </div>
 
 <!-- Sections-->
+@section scripts{ 
+    <script>
+        $(document).ready(() => insta());
 
+        $('#instafeed').on('click', 'img', function () {
+            var link = $(this).data('link');
+            console.log(link);
+            window.open(link);
+        });
+
+        //anılara tıklandığında yapılacaklar
+        $('.moments .col-md-4').click(function () {
+            var content = $(this).find('p').text();
+            var title = $(this).find('h4').text();
+            $('.modal .modal-body').text(content);
+            $('.modal .modal-title').text(title);
+            $('.modal').modal();
+        });
+
+        //duyurulara click olduğunda yapılacakalr
+        $('.one_third').on('click', function () {
+            var content = $(this).find('p').text();
+            var title = $(this).find('h6.heading').text();
+
+            $('.modal .modal-body').text(content);
+            $('.modal .modal-title').text(title);
+            console.log('debug');
+            $('.modal').modal();
+        });
+
+
+        //document ready popup
+        $(document).ready(function () {
+            var content = $('.popup').find('p').text();
+            var title = $('.popup').find('h6.heading').text();
+
+            $('.modal .modal-body').text(content);
+            $('.modal .modal-title').text(title);
+
+            $('.modal').modal();
+        });
+
+    </script>
+}
 

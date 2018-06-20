@@ -10,13 +10,12 @@ namespace AhgMezunlar.Controllers
 {
     public class HomeController : Controller
     {
-        private IRepository Repository;
+        
         private UserManager<ApplicationUser> userManager;
 
 
-        public HomeController(IRepository repository,UserManager<ApplicationUser> _userManager)
+        public HomeController(UserManager<ApplicationUser> _userManager)
         {
-            Repository = repository;
             userManager = _userManager;
         }
 
