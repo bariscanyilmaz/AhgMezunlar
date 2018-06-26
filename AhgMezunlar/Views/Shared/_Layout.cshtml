@@ -28,18 +28,18 @@
                     </li>
                     <li>
                         <a class="drop" href="/Society">Derneğimiz</a>
-                        <ul>
+                        <ul class="nav-pill-list">
                             <li>
-                                <a href="pages/gallery.html">tüzük</a>
+                                <a data-pill="#tuzuk" href="/Society#tuzuk">Tuzuk</a>
                             </li>
                             <li>
-                                <a href="pages/full-width.html">Yönetim kurulu</a>
+                                <a data-pill="#yk" href="/Society#yk">Yönetim Kurulu</a>
                             </li>
                             <li>
-                                <a href="pages/sidebar-left.html">hakkımızda</a>
+                                <a data-pill="#ku" href="/Society#ku">Kurucu Üyeler</a>
                             </li>
                             <li>
-                                <a href="pages/sidebar-right.html">Kurucu üye</a>
+                                <a data-pill="#hak" href="/Society#hak">Hakkımızda</a>
                             </li>
                         </ul>
                     </li>
@@ -73,16 +73,16 @@
                             <a class="nav-link" href="/Society">DERNEK</a>
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Hakkımızda</a>
+                                    <a class="nav-link" href="/Society#hak">Hakkımızda</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Yönetim Kurulu</a>
+                                    <a class="nav-link" href="/Society#yk">Yönetim Kurulu</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Kurucu Üyeler</a>
+                                    <a class="nav-link" href="/Society#ku">Kurucu Üyeler</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Tüzük</a>
+                                    <a class="nav-link" href="/Society#tuzuk">Tüzük</a>
                                 </li>
                             </ul>
                         </li>
@@ -202,8 +202,8 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+                <div class="modal-image"><img src="" height="auto" width="320px" /></div>
                 <div class="modal-body">
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
@@ -211,7 +211,6 @@
             </div>
         </div>
     </div>
-
     <script src="~/js/jquery.min.js"></script>
     <script src="~/js/jquery.backtotop.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -226,11 +225,13 @@
     </script>
     <script>
         $('#toggle-button').click(function () {
-            console.log('debug');
             $('.collapse').toggleClass('show');
+        })
+
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
     @RenderSection("scripts", false)
-
 </body>
 </html>

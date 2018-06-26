@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
 }
 
@@ -52,7 +51,7 @@
                     <div class="row p-0 mx-0 justify-content-center">
                         <div class="main-card border">
                             <div class="icon">
-                                <img class="circle border img-fluid" src="images/demo/30300440.jpg" alt="prfoil foto">
+                                <img class="circle border img-fluid" src="~/img/Defaults/30300440.jpg" alt="prfoil foto">
                             </div>
                             <h6 class="text-center">
                                 Barış Can Yılmaz
@@ -66,7 +65,7 @@
                         </div>
                         <div class="main-card border">
                             <div class="icon">
-                                <img class="circle border img-fluid" src="images/demo/30300440.jpg" alt="prfoil foto">
+                                <img class="circle border img-fluid" src="~/img/Defaults/30300440.jpg" alt="prfoil foto">
                             </div>
                             <h6 class="text-center">
                                 Barış Can Yılmaz
@@ -80,7 +79,7 @@
                         </div>
                         <div class="main-card border">
                             <div class="icon">
-                                <img class="circle border img-fluid" src="images/demo/30300440.jpg" alt="prfoil foto">
+                                <img class="circle border img-fluid" src="~/img/Defaults/30300440.jpg" alt="prfoil foto">
                             </div>
                             <h6 class="text-center">
                                 Barış Can Yılmaz
@@ -94,7 +93,7 @@
                         </div>
                         <div class="main-card border">
                             <div class="icon">
-                                <img class="circle border img-fluid" src="images/demo/30300440.jpg" alt="prfoil foto">
+                                <img class="circle border img-fluid" src="~/img/Defaults/30300440.jpg" alt="prfoil foto">
                             </div>
                             <h6 class="text-center">
                                 Barış Can Yılmaz
@@ -113,7 +112,7 @@
                     <div class="row mx-0 p-0 justify-content-center">
                         <div class="main-card border">
                             <div class="icon">
-                                <img class="circle border img-fluid" src="images/demo/30300440.jpg" alt="prfoil foto">
+                                <img class="circle border img-fluid" src="~/img/Defaults/30300440.jpg" alt="prfoil foto">
                             </div>
                             <h6 class="text-center">
                                 Barış Can Yılmaz
@@ -127,7 +126,7 @@
                         </div>
                         <div class="main-card border">
                             <div class="icon">
-                                <img class="circle border img-fluid" src="images/demo/30300440.jpg" alt="prfoil foto">
+                                <img class="circle border img-fluid" src="~/img/Defaults/30300440.jpg" alt="prfoil foto">
                             </div>
                             <h6 class="text-center">
                                 Barış Can Yılmaz
@@ -141,7 +140,7 @@
                         </div>
                         <div class="main-card border">
                             <div class="icon">
-                                <img class="circle border img-fluid" src="images/demo/30300440.jpg" alt="prfoil foto">
+                                <img class="circle border img-fluid" src="~/img/Defaults/30300440.jpg" alt="prfoil foto">
                             </div>
                             <h6 class="text-center">
                                 Barış Can Yılmaz
@@ -155,7 +154,7 @@
                         </div>
                         <div class="main-card border">
                             <div class="icon">
-                                <img class="circle border img-fluid" src="images/demo/30300440.jpg" alt="prfoil foto">
+                                <img class="circle border img-fluid" src="~/img/Defaults/30300440.jpg" alt="prfoil foto">
                             </div>
                             <h6 class="text-center">
                                 Barış Can Yılmaz
@@ -197,3 +196,40 @@
     </div>
 </div>
 
+<!--Sections-->
+@section scripts{
+<script>
+    $('a.nav-link').click(function (e) {
+        var href = $(this).attr('href');
+        let inx = href.indexOf('#');
+        tabShow(href.substr(inx));
+    })
+
+    $('.nav-pill-list a').click(function () {
+        var pillData = $(this).data('pill');
+        tabShow(pillData);
+    });
+
+    $(document).ready(function () {
+        var hash = location.hash;
+        tabShow(hash);
+    })
+
+    function tabShow(params) {
+        switch (params) {
+            case "#tuzuk":
+                $('a[href="#tuzuk"]').tab('show');
+                break;
+            case "#yk":
+                $('a[href="#yk"]').tab('show');
+                break;
+            case "#hak":
+                $('a[href="#hak"]').tab('show');
+                break;
+            case "#ku":
+                $('a[href="#ku"]').tab('show');
+                break;
+        }
+    }
+</script>
+}

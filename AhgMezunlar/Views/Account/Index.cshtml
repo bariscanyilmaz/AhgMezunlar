@@ -13,23 +13,20 @@
 
     <button class="accordion">Kullanıcı Listesi</button>
     <div class="panel">
-        <table class="table table-hover table-sm">
+        <table class="userListTable table table-hover table-sm">
             <thead>
                 <tr>
-                    <th>Kullanıcı Adı</th>
+                    <th>Email</th>
                     <th class="w-25">Rol</th>
-                    <th class="w-15"></th>
+                    <th class="w-10"><i data-toggle="tooltip" title="Düzenlemek için tıklayabilirsiniz" class="fa fa-question-circle-o fa-2x"></i></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>bariscanyilmaz</td>
-                    <td>Kullanıcı</td>
+                    <td data-user-id="guidveri" class="user-name">baris@bariscanyilmaz</td>
+                    <td class="user-role" data-role="2">Kullanıcı</td>
                     <td>
-                        <a href="">
-                            <i class="fa fa-edit fa-2x"></i>
-                        </a>
-                        <a href="">
+                        <a href="#">
                             <i class="fa fa-trash fa-2x"></i>
                         </a>
                     </td>
@@ -40,17 +37,18 @@
     <button class="accordion">Kullanıcı Oluştur veya Düzenle</button>
     <div class="panel ">
         <form>
+            <input type="hidden" id="user-id" name="user-id" value="" />
             <div class="form-group">
-                <label for="email">Email</label>
-                <input class="form-control" id="email" type="email">
+                <label for="user-email">Email</label>
+                <input  class="form-control" id="user-email" name="user-email" type="email">
             </div>
             <div class="form-group">
                 <label for="password">Şifre</label>
-                <input type="password" class="form-control" name="" id="password">
+                <input type="password" class="form-control" name="password" id="password">
             </div>
             <div class="form-group">
-                <select name="role" class="custom-select" id="">
-                    <option value="0" selected disabled>Kullanıcı Yetki Derecesi Seçiniz</option>
+                <select name="role" class="custom-select" id="role" >
+                    <option selected disabled>Kullanıcı Yetki Derecesi Seçiniz</option>
                     <option value="1">Yönetici</option>
                     <option value="2">Normal Kullanıcı</option>
                 </select>
@@ -59,3 +57,63 @@
         </form>
     </div>
 </div>
+
+<!--Sections-->
+@section scripts{ 
+    <script>
+        var accordion = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < accordion.length; i++) {
+            accordion[i].addEventListener('click', function () {
+                this.classList.toggle('active');
+
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                    panel.classList.toggle('m-3');
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + 'px';
+                    panel.classList.toggle('m-3');
+                }
+
+            });
+
+        }
+
+        var navLinks = document.getElementsByClassName('nav-link');
+        var tabContentList = document.getElementsByClassName('tab-pane');
+
+        $('.nav-item a').click(function () {
+            var targetId = $(this).data('pill').replace('#', '');
+            openTab(targetId);
+        })
+
+        function openTab(tabpaneid) {
+            for (let i = 0; i < tabContentList.length; i++) {
+                tabContentList[i].style.display = 'none';
+            }
+
+            element = document.getElementById(tabpaneid);
+            element.style.display = 'flex';
+        }
+
+        $('.userListTable tr').click(function (e) {
+            let id = $(this).find('.user-name').data('user-id');
+            let userName = $(this).find('.user-name').text();
+            let role = $(this).find('.user-role').data('role');
+
+            console.log(id);
+            console.log(userName);
+            console.log(role);
+
+            $('#user-email').val(userName);
+            $('#role').val(role);
+            $('#user-id').val(id);
+            
+            e.stopImmediatePropagation();
+            e.preventDefault();
+        })
+
+    </script>1
+}
+

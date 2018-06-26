@@ -356,3 +356,9 @@ select{
 th{
     text-align: center;
 }
+
+.modal-image{
+    display:flex;
+    justify-content:center;
+
+}

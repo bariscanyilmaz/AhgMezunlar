@@ -165,7 +165,6 @@
                 <label for="title">Başlık</label>
                 <input type="text" id="title" class="form-control form-control-lg" name="title">
             </div>
-
             <div class="col-md-6">
                 <label for="name">Gönderen adınız</label>
                 <input type="text" id="name" name="name" class="form-control form-control-lg">
@@ -194,9 +193,13 @@
     <script>
         CKEDITOR.replace('content');
 
+        //anılara tıklandığında yapılacaklar
         $('.moments .col-md-4').click(function () {
             var content = $(this).find('p').text();
             var title = $(this).find('h4').text();
+            var image = $(this).find('img').attr('src');
+
+            $('.modal img').attr('src', image);
             $('.modal .modal-body').text(content);
             $('.modal .modal-title').text(title);
             $('.modal').modal();

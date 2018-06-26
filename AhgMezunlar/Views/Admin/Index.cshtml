@@ -9,6 +9,7 @@
     </a>
 </div>
 <div class="container">
+    <!--Ana Slider-->
     <h3>Ana Slider Yönetimi</h3>
     <div class="table-responsive">
         <table class="table table-sm table-hover">
@@ -50,6 +51,7 @@
 
     </div>
     <hr>
+    <!--Anılar Yönetimi-->
     <h3>Anıların Yönetimi</h3>
     <div class="table-responsive">
         <table class="momentsTable table table-sm table-hover">
@@ -59,14 +61,14 @@
                     <th>Başlık</th>
                     <th>Gönderen</th>
                     <th>Yayın Durumu</th>
-                    <th></th>
+                    <th class="w-10"><i data-toggle="tooltip" title="Görüntülemek için satırlara tıklayabilirsiniz" class="fa fa-question-circle-o fa-2x"></i></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>1.</td>
-                    <td data-image="image" data-content="content">Ahg de ilk gece</td>
-                    <td>Barış Can Yılmaz</td>
+                    <td >1.</td>
+                    <td data-image="/img/Defaults/320x220.png" data-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex corporis saepe mollitia nesciunt! A pariatur doloribus beatae, illo similique, alias dolorem accusantium obcaecati asperiores ipsam distinctio earum blanditiis, harum maiores?">Ahg de ilk gece</td>
+                    <td data-from="Barış Can Yılmaz">Barış Can Yılmaz</td>
                     <td>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -78,7 +80,6 @@
                         </div>
                     </td>
                     <td>
-                        <div class="btn btn-sm btn-primary">Görüntüle</div>
                         <div class="btn btn-sm btn-danger">Sil</div>
                     </td>
                 </tr>
@@ -86,10 +87,13 @@
         </table>
     </div>
     <hr>
+
+    <!--Etkinlik Yönetimi-->
     <h3>Etkinlik Yönetimi</h3>
     <div class="alert text-center alert-success">Ana Sayfada Yayınlanacak Etkinlikler</div>
     <div class="table-responsive">
-        <table class="table table-sm">
+        <!--Events Manage table-->
+        <table class="eventsManageTable table table-sm">
             <thead>
                 <tr>
                     <th class="w-5">#</th>
@@ -108,9 +112,9 @@
                             <label class="custom-control-label" for="customCheck1">Popup olarak göster</label>
                         </div>
                     </td>
-                    <td>Geleneksel Pilav Günü</td>
-                    <td>Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
-                    <td>
+                    <td class="event-title"  data-image="/img/Defaults/320x220.png" >Geleneksel Pilav Günü</td>
+                    <td class="event-content">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
+                    <td >
                         <div class="btn btn-success">Düzenle</div>
                         <div class="btn btn-danger">Kaldır</div>
 
@@ -124,8 +128,8 @@
                             <label class="custom-control-label" for="customCheck1">Popup olarak göster</label>
                         </div>
                     </td>
-                    <td>Geleneksel Pilav Günü</td>
-                    <td>Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
+                    <td class="event-title" >Geleneksel Pilav Günü</td>
+                    <td class="event-content"  data-image="/img/Defaults/320x220.png">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
                     <td>
                         <div class="btn btn-success">Düzenle</div>
                         <div class="btn btn-danger">Kaldır</div>
@@ -139,8 +143,8 @@
                             <label class="custom-control-label" for="customCheck2">Popup olarak göster</label>
                         </div>
                     </td>
-                    <td>Geleneksel Pilav Günü</td>
-                    <td>Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
+                    <td class="event-title" data-image="/img/Defaults/320x220.png">Geleneksel Pilav Günü</td>
+                    <td class="event-content" >Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
                     <td>
                         <div class="btn btn-success">Düzenle</div>
                         <div class="btn btn-danger">Kaldır</div>
@@ -148,8 +152,10 @@
                 </tr>
             </tbody>
         </table>
+        <br />
         <div class="alert text-center alert-secondary">Önceden Yayınlanmışlar</div>
-        <table class="table table-sm">
+        <!--Old events-->
+        <table class="oldEventsTable table table-sm">
             <thead>
                 <tr>
                     <th class="w-5">#</th>
@@ -161,8 +167,8 @@
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td>Geleneksel Pilav Günü</td>
-                    <td>Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
+                    <td class="event-title" data-image="/img/Defaults/320x220.png" >Geleneksel Pilav Günü</td>
+                    <td class="event-content">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
                     <td>
                         <div class="btn btn-success">Düzenle</div>
                         <div class="btn btn-danger">Kaldır</div>
@@ -171,8 +177,8 @@
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>Geleneksel Pilav Günü</td>
-                    <td>Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
+                    <td class="event-title" data-image="/img/Defaults/320x220.png">Geleneksel Pilav Günü</td>
+                    <td class="event-content">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
                     <td>
                         <div class="btn btn-success">Düzenle</div>
                         <div class="btn btn-danger">Kaldır</div>
@@ -180,8 +186,8 @@
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>Geleneksel Pilav Günü</td>
-                    <td>Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
+                    <td class="event-title" data-image="/img/Defaults/320x220.png">Geleneksel Pilav Günü</td>
+                    <td class="event-content">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
                     <td>
                         <div class="btn btn-success">Düzenle</div>
                         <div class="btn btn-danger">Kaldır</div>
@@ -189,8 +195,7 @@
                 </tr>
             </tbody>
         </table>
-
-        <hr>
+        <br />
         <div class="text-center alert alert-info">Etkinlik ekleyin veya düzenleyin</div>
         <form class="events-panel mx-auto">
             <div class="form-group">
@@ -633,7 +638,7 @@
                     <option value="fa-tags">&#xf02c; fa-tags</option>
                 </select>
             </div>
-            <div class="form-group ">
+            <div class="form-group">
                 <label for="title">Başlık</label>
                 <input type="text" id="title" class="form-control">
             </div>
@@ -651,12 +656,11 @@
                 <textarea cols="40" rows="10" name="content" id="content"></textarea>
             </div>
             <input type="submit" value="Kaydet" class="btn btn-primary">
-
         </form>
     </div>
     <hr>
 
-    <!--Gelen kutusu-->
+    <!--Gelen kutusu Panel-->
     <button class="accordion">Gelen Kutusu</button>
     <div class="panel">
         <ul class="nav nav-pills mb-3">
@@ -671,9 +675,10 @@
             </li>
         </ul>
         <div class="tab-content">
+            <!--Gelen Kutusu-->
             <div class="tab-pane active" id="pills-inbox" role="tabpanel" aria-labelledby="pills-inbox-tab">
                 <div class="table-responsive">
-                    <table class="table table-sm mb-0 table-hover">
+                    <table class="inboxTable table table-sm mb-0 table-hover">
                         <thead>
                             <tr>
 
@@ -688,12 +693,12 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <input checked type="checkbox" value="okundu">
+                                    <input checked type="checkbox" value="true">
                                 </td>
-                                <td>Barış Can Yılmaz</td>
-                                <td>baris@bariscanyilmaz.com</td>
-                                <td>053131232131</td>
-                                <td>Pilav Günü Ulaşım</td>
+                                <td class="contact-sender">Barış Can Yılmaz</td>
+                                <td class="contact-from">baris@bariscanyilmaz.com</td>
+                                <td class="contact-phone">053131232131</td>
+                                <td class="contact-object" data-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex corporis saepe mollitia nesciunt! A pariatur doloribus beatae, illo similique, alias dolorem accusantium obcaecati asperiores ipsam distinctio earum blanditiis, harum maiores?">Pilav Günü Ulaşım</td>
                                 <td class="text-center">
                                     <a href="#">
                                         <i class="fa fa-2x fa-minus-circle"></i>
@@ -702,40 +707,12 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="checkbox" value="okundu">
+                                    <input type="checkbox" value="false">
                                 </td>
-                                <td>Fehmi Yılmaz</td>
-                                <td>fehmi@fehmiyilmaz.com</td>
-                                <td>053131232111</td>
-                                <td>Aşure Günü Ulaşım</td>
-                                <td class="text-center">
-                                    <a href="#">
-                                        <i class="fa fa-2x fa-minus-circle"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" value="okundu">
-                                </td>
-                                <td>Fehmi Yılmaz</td>
-                                <td>fehmi@fehmiyilmaz.com</td>
-                                <td>053131232111</td>
-                                <td>Aşure Günü Ulaşım</td>
-                                <td class="text-center">
-                                    <a href="#">
-                                        <i class="fa fa-2x fa-minus-circle"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" value="okundu">
-                                </td>
-                                <td>Fehmi Yılmaz</td>
-                                <td>fehmi@fehmiyilmaz.com</td>
-                                <td>053131232111</td>
-                                <td>Aşure Günü Ulaşım</td>
+                                <td class="contact-sender">Fehmi Yılmaz</td>
+                                <td class="contact-from">fehmi@fehmiyilmaz.com</td>
+                                <td class="contact-phone">053131232111</td>
+                                <td class="contact-object" data-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex corporis saepe mollitia nesciunt! A pariatur doloribus beatae, illo similique, alias dolorem accusantium obcaecati asperiores ipsam distinctio earum blanditiis, harum maiores?">Aşure Günü Ulaşım</td>
                                 <td class="text-center">
                                     <a href="#">
                                         <i class="fa fa-2x fa-minus-circle"></i>
@@ -746,9 +723,10 @@
                     </table>
                 </div>
             </div>
+            <!--Okunmayanlar-->
             <div class="tab-pane " id="pills-unread" role="tabpanel" aria-labelledby="pills-unread-tab">
                 <div class="table-responsive">
-                    <table class="table table-sm mb-0 table-hover">
+                    <table class="unreadTable table table-sm mb-0 table-hover">
                         <thead>
                             <tr>
                                 <th class="w-5">Durum</th>
@@ -762,12 +740,12 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <input type="checkbox" value="okundu">
+                                    <input type="checkbox" value="false">
                                 </td>
-                                <td>Fehmi Yılmaz</td>
-                                <td>fehmi@fehmiyilmaz.com</td>
-                                <td>053131232111</td>
-                                <td>Aşure Günü Ulaşım</td>
+                                <td class="contact-sender">Barış Can Yılmaz</td>
+                                <td class="contact-from">baris@bariscanyilmaz.com</td>
+                                <td class="contact-phone">053131232131</td>
+                                <td class="contact-object" data-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex corporis saepe mollitia nesciunt! A pariatur doloribus beatae, illo similique, alias dolorem accusantium obcaecati asperiores ipsam distinctio earum blanditiis, harum maiores?">Pilav Günü Ulaşım</td>
                                 <td class="text-center">
                                     <a href="#">
                                         <i class="fa fa-2x fa-minus-circle"></i>
@@ -778,9 +756,10 @@
                     </table>
                 </div>
             </div>
+            <!--Okunanlar-->
             <div class="tab-pane" id="pills-read" role="tabpanel" aria-labelledby="pills-read-tab">
                 <div class="table-responsive">
-                    <table class="table table-sm mb-0 table-hover">
+                    <table class="readTable table table-sm mb-0 table-hover">
                         <thead>
                             <tr>
                                 <th class="w-5">Durum</th>
@@ -794,12 +773,12 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <input checked type="checkbox" value="okundu">
+                                    <input checked type="checkbox" value="true">
                                 </td>
-                                <td>Barış Can Yılmaz</td>
-                                <td>baris@bariscanyilmaz.com</td>
-                                <td>053131232131</td>
-                                <td>Pilav Günü Ulaşım</td>
+                                <td class="contact-sender">Barış Can Yılmaz</td>
+                                <td class="contact-from">baris@bariscanyilmaz.com</td>
+                                <td class="contact-phone">053131232131</td>
+                                <td class="contact-object" data-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex corporis saepe mollitia nesciunt! A pariatur doloribus beatae, illo similique, alias dolorem accusantium obcaecati asperiores ipsam distinctio earum blanditiis, harum maiores?">Pilav Günü Ulaşım</td>
                                 <td class="text-center">
                                     <a href="#">
                                         <i class="fa fa-2x fa-minus-circle"></i>
@@ -814,3 +793,129 @@
     </div>
 </div>
 
+<!-- Sections-->
+@section scripts{
+    <script src="https://cdn.ckeditor.com/4.9.2/basic/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('content');
+
+        //accordion panel
+        var accordion = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < accordion.length; i++) {
+            accordion[i].addEventListener('click', function () {
+                this.classList.toggle('active');
+
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                    panel.classList.toggle('m-3');
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + 'px';
+                    panel.classList.toggle('m-3');
+                }
+
+            });
+
+        }
+
+        var navLinks = document.getElementsByClassName('nav-link');
+        var tabContentList = document.getElementsByClassName('tab-pane');
+
+        $('.nav-item a').click(function () {
+            var targetId = $(this).data('pill').replace('#', '');
+            openTab(targetId);
+        })
+
+        function openTab(tabpaneid) {
+            for (let i = 0; i < tabContentList.length; i++) {
+                tabContentList[i].style.display = 'none';
+            }
+
+            element = document.getElementById(tabpaneid);
+            element.style.display = 'flex';
+        }
+        //moments table click
+        $('.momentsTable tr').click(function () {
+            let td2 = $(this).find('td:nth-child(2)');
+                
+            let image = td2.data('image');
+            let content = td2.data('content');
+            let title = td2.text();
+
+            $('.modal img').attr('src', image);
+            $('.modal .modal-body').text(content);
+            $('.modal .modal-title').text(title);
+            $('.modal').modal();
+        });8
+
+
+        //events managment table click
+        $('.eventsManageTable tr').click(function () {
+
+            let title = $(this).find('.event-title').text();
+            let content = $(this).find('.event-content').text();
+            let image = $(this).find('.event-title').data('image');
+
+            $('.modal img').attr('src', image);
+            $('.modal .modal-body').text(content);
+            $('.modal .modal-title').text(title);
+            $('.modal').modal();
+
+        })
+
+        //Old evetns table click
+        $('.oldEventsTable tr').click(function () {
+            let title = $(this).find('.event-title').text();
+            let content = $(this).find('.event-content').text();
+            let image = $(this).find('.event-title').data('image');
+
+            $('.modal img').attr('src', image);
+            $('.modal .modal-body').text(content);
+            $('.modal .modal-title').text(title);
+            $('.modal').modal();
+
+        })
+
+
+        //İnbox panel
+        //inboxTable
+        $('.inboxTable tr').click(function () {
+            let sender = $(this).find('td.contact-sender').text();
+            let object = $(this).find('td.contact-object').text();
+            let content = $(this).find('.contact-object').data('content');
+
+            $('.modal .modal-body').text(content);
+            $('.modal .modal-title').text(object)
+            $('.modal').modal();
+
+        })
+
+        //unreadTable
+        $('.unreadTable tr').click(function () {
+            let sender = $(this).find('td.contact-sender').text();
+            let object = $(this).find('td.contact-object').text();
+            let content = $(this).find('.contact-object').data('content');
+
+            $('.modal .modal-body').text(content);
+            $('.modal .modal-title').text(object)
+            $('.modal').modal();
+
+        });
+
+        //readTable
+        $('.readTable tr').click(function () {
+            let sender = $(this).find('td.contact-sender').text();
+            let object = $(this).find('td.contact-object').text();
+            let content = $(this).find('.contact-object').data('content');
+
+            $('.modal .modal-body').text(content);
+            $('.modal .modal-title').text(object)
+            $('.modal').modal();
+
+        });
+
+
+
+    </script>
+}

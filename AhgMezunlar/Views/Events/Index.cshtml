@@ -56,15 +56,59 @@
                 <tr><th class="w-10">#</th><th class="w-20">Başlık</th><th>İçerik</th></tr>
             </thead>
             <tbody>
-                <tr><td>1</td><td>Pilav Günü</td><td>Geleneksel Pilav Günümüze Tüm öğretmen, öğrenci ve velilerimiz davetlidir...</td></tr>
-                <tr><td>2</td><td>Halı Saha</td><td>Geleneksel Pilav Günümüze Tüm öğretmen, öğrenci ve velilerimiz davetlidir...</td></tr>
-                <tr><td>3</td><td>Mezunlar Buluşması</td><td>Geleneksel Pilav Günümüze Tüm öğretmen, öğrenci ve velilerimiz davetlidir...</td></tr>
-                <tr><td>4</td><td>Dernek Toplantısı</td><td>Geleneksel Pilav Günümüze Tüm öğretmen, öğrenci ve velilerimiz davetlidir...</td></tr>
-                <tr><td>5</td><td>Çınarlara Vefa</td><td>Geleneksel Pilav Günümüze Tüm öğretmen, öğrenci ve velilerimiz davetlidir...</td></tr>
-                <tr><td>6</td><td>Alt Döneme Vefa</td><td>Geleneksel Pilav Günümüze Tüm öğretmen, öğrenci ve velilerimiz davetlidir...</td></tr>
-                <tr><td>7</td><td>Üst Döneme Vefa </td><td>Geleneksel Pilav Günümüze Tüm öğretmen, öğrenci ve velilerimiz davetlidir...</td></tr>
-                <tr><td>8</td><td>Kariyer Günleri</td><td>Geleneksel Pilav Günümüze Tüm öğretmen, öğrenci ve velilerimiz davetlidir...</td></tr>
+                <tr data-source="~/img/Defaults/320x220.png" data-content=""><td>1</td><td class="row-title">Pilav Günü</td><td class="row-preview-content">Geleneksel Pilav Günümüze Tüm öğretmen, öğrenci ve velilerimiz davetlidir...</td></tr>
+                <tr data-source="~/img/Defaults/320x220.png" data-content=""><td>2</td><td class="row-title">Halı Saha</td><td class="row-preview-content">Geleneksel Pilav Günümüze Tüm öğretmen, öğrenci ve velilerimiz davetlidir...</td></tr>
+                <tr data-source="~/img/Defaults/320x220.png" data-content=""><td>3</td><td class="row-title">Mezunlar Buluşması</td><td class="row-preview-content">Geleneksel Pilav Günümüze Tüm öğretmen, öğrenci ve velilerimiz davetlidir...</td></tr>
+                <tr data-source="~/img/Defaults/320x220.png" data-content=""><td>4</td><td class="row-title">Dernek Toplantısı</td><td class="row-preview-content">Geleneksel Pilav Günümüze Tüm öğretmen, öğrenci ve velilerimiz davetlidir...</td></tr>
+                <tr data-source="~/img/Defaults/320x220.png" data-content=""><td>5</td><td class="row-title">Çınarlara Vefa</td><td class="row-preview-content">Geleneksel Pilav Günümüze Tüm öğretmen, öğrenci ve velilerimiz davetlidir...</td></tr>
+                <tr data-source="~/img/Defaults/320x220.png" data-content=""><td>6</td><td class="row-title">Alt Döneme Vefa</td><td class="row-preview-content">Geleneksel Pilav Günümüze Tüm öğretmen, öğrenci ve velilerimiz davetlidir...</td></tr>
+                <tr data-source="~/img/Defaults/320x220.png" data-content=""><td>7</td><td class="row-title">Üst Döneme Vefa </td><td class="row-preview-content">Geleneksel Pilav Günümüze Tüm öğretmen, öğrenci ve velilerimiz davetlidir...</td></tr>
+                <tr data-source="~/img/Defaults/320x220.png" data-content=""><td>8</td><td class="row-title">Kariyer Günleri</td><td class="row-preview-content">Geleneksel Pilav Günümüze Tüm öğretmen, öğrenci ve velilerimiz davetlidir...</td></tr>
             </tbody>
         </table>
     </div>
 </div>
+@section scripts{ 
+    <script>
+        let global_image = "/img/Defaults/320x220.png";
+
+         //duyurulara click olduğunda yapılacakalr
+        $('.one_third').on('click', function () {
+            var content = $(this).find('p').text();
+            var title = $(this).find('h6.heading').text();
+                                    
+            $('.modal .modal-body').text(content);
+            $('.modal .modal-title').text(title);
+            $('.modal img').attr('src', global_image);
+            $('.modal').modal();
+        });
+
+
+        $('tbody tr').on('click', function () {
+
+            let title = $(this).find('.row-title').text();
+            let content = $(this).find('.row-preview-content').text();
+            let source = $(this).data('source');
+            $('.modal img').attr('src', global_image);
+            $('.modal .modal-body').text(content);
+            $('.modal .modal-title').text(title);
+            $('.modal').modal();
+
+        });
+
+
+        //document ready popup
+        $(document).ready(function () {
+            var content = $('.popup').find('p').text();
+            var title = $('.popup').find('h6.heading').text();
+
+            $('.modal img').attr('src', global_image);
+            $('.modal .modal-body').text(content);
+            $('.modal .modal-title').text(title);
+            $('.modal').modal();
+
+        });
+
+
+    </script>
+}
