@@ -22,7 +22,7 @@ namespace AhgMezunlar.Controllers
 
         public IActionResult Index()
         {
-            return View(userManager.Users);
+            return View();
         }
 
 

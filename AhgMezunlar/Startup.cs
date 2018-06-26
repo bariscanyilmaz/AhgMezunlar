@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AhgMezunlar.Models;
+using AhgMezunlar.Models.Abstract;
+using AhgMezunlar.Models.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -32,7 +34,10 @@ namespace AhgMezunlar
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
-            
+            services.AddTransient<IAccountRepository, AccountRepository>();
+            services.AddTransient<IAdminRepository, AdminRepository>();
+            services.AddTransient<IEventsRepository, EventsRepository>();
+            services.AddTransient<IMomentsRepository, MomentsRepository>();
             services.AddMvc();
 
         }
