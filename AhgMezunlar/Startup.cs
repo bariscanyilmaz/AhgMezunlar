@@ -38,6 +38,7 @@ namespace AhgMezunlar
             services.AddTransient<IAdminRepository, AdminRepository>();
             services.AddTransient<IEventsRepository, EventsRepository>();
             services.AddTransient<IMomentsRepository, MomentsRepository>();
+            services.AddTransient<ISliderRepository, SliderRepository>();
             services.AddMvc();
 
         }

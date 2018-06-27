@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace AhgMezunlar.Models.Abstract
 {
-    interface IEventsRepository
+    public interface IEventsRepository
     {
         IQueryable<Events> GetEvents();
+        IQueryable<Events> GetShowOnPage();
         void DeleteEvent(int eventId);
         void AddEvent(Events events);
         void UpdateEvent(Events events);

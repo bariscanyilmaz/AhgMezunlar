@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace AhgMezunlar.Models.Abstract
 {
-    interface IAdminRepository
+    public interface IAdminRepository
     {
         IQueryable<ContactForm> GetContacts();
         void DeleteContact(int contactId);

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace AhgMezunlar.Models.Abstract
 {
-    interface IMomentsRepository
+    public interface IMomentsRepository
     {
         IQueryable<Moments> GetMoments();
         void DeleteMoment(int momentId);

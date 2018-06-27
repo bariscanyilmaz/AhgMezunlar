@@ -362,3 +362,11 @@ th{
     justify-content:center;
 
 }
+
+.carousel-control-next{
+    cursor:pointer;
+}
+
+.carousel-control-prev{
+    cursor: pointer;
+}

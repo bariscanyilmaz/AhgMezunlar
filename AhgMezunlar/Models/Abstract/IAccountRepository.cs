@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace AhgMezunlar.Models.Abstract
 {
-    interface IAccountRepository
+    public interface IAccountRepository
     {
         ApplicationUser GetUser(string email);
         IQueryable<ApplicationUser> GetUsers();

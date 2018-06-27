@@ -36,6 +36,11 @@ namespace AhgMezunlar.Models.Concrete
             return dbContext.Events;
         }
 
+        public IQueryable<Events> GetShowOnPage()
+        {
+            return dbContext.Events.Where(i => i.ShowOnPage == true);
+        }
+
         public void SaveEvent(Events events)
         {
             if (events.Id==0)
