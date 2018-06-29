@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\img\Moments\" />
+    <Folder Include="wwwroot\img\Events\" />
   </ItemGroup>
 
 </Project>

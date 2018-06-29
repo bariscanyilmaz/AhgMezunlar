@@ -168,14 +168,7 @@ else
             </div>
         </div>
 
-        <p class="momentsslider">
-            <a class="left-arrow">
-                <span>&lt;</span>
-            </a>
-            <a class="right-arrow">
-                <span>&gt;</span>
-            </a>
-        </p>
+        
         @await Component.InvokeAsync("Moments")
         
     </section>
@@ -219,6 +212,8 @@ else
 
         //document ready popup
         $(document).ready(function () {
+
+            //moment boş mu değil mi ve popup state true kontrolü yap
             var content = $('.popup').find('p').text();
             var title = $('.popup').find('h6.heading').text();
 
