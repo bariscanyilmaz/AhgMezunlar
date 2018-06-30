@@ -14,11 +14,16 @@ namespace AhgMezunlar.Models.Concrete
             dbContext = _dbContext;
         }
 
+        public void AddContact(ContactForm contactForm)
+        {
+            dbContext.Add(contactForm);
+            dbContext.SaveChanges();
+        }
 
         public void DeleteContact(int contactId)
         {
             var contact = dbContext.Contacts.FirstOrDefault(c => c.Id == contactId);
-            if (contact!=null)
+            if (contact != null)
             {
                 dbContext.Contacts.Remove(contact);
                 dbContext.SaveChanges();
@@ -31,12 +36,12 @@ namespace AhgMezunlar.Models.Concrete
             return dbContext.Contacts;
         }
 
-        public void UpdateContact(bool readit,int contactId)
+        public void UpdateContact(bool isRead, int contactId)
         {
             var contact = dbContext.Contacts.FirstOrDefault(c => c.Id == contactId);
-            if (contact!=null)
+            if (contact != null)
             {
-                contact.ReadIt = readit;
+                contact.IsRead = isRead;
                 dbContext.SaveChanges();
             }
         }

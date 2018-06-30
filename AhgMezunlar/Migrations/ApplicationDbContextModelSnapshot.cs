@@ -15,7 +15,7 @@ namespace AhgMezunlar.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.0-rtm-30799")
+                .HasAnnotation("ProductVersion", "2.1.1-rtm-30846")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -80,11 +80,11 @@ namespace AhgMezunlar.Migrations
 
                     b.Property<string>("Email");
 
-                    b.Property<string>("Oject");
+                    b.Property<bool>("IsRead");
+
+                    b.Property<string>("Object");
 
                     b.Property<int>("Phone");
-
-                    b.Property<bool>("ReadIt");
 
                     b.Property<string>("SenderName");
 

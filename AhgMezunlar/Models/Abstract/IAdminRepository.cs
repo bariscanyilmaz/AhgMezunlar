@@ -13,8 +13,9 @@ namespace AhgMezunlar.Models.Abstract
         /// okunu durumu değişikliği yapıldığında 
         /// kullanılacak metot
         /// </summary>
-        /// <param name="readit"></param>
-        void UpdateContact(bool readit, int contactId);
+        /// <param name="isRead"></param>
+        void UpdateContact(bool isRead, int contactId);
+        void AddContact(ContactForm contactForm);
         
     }
 }

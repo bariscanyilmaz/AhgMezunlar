@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -110,33 +109,33 @@
 
     <!-- Cotntact form -->
     <div id="contact" class="container">
-        <form class="form mx-auto">
+        <form id="contactForm" class=" form mx-auto">
             <h4>İletişim Formu</h4>
             <div class="form-group row">
                 <div class="col-md-6">
                     <label for="name">Adı Soyadı</label>
-                    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Adınız Soyadınız">
+                    <input type="text" class="form-control form-control-lg" id="name" name="SenderName" placeholder="Adınız Soyadınız">
                 </div>
                 <div class="col-md-6">
                     <label for="object">Konu</label>
-                    <input type="text" class="form-control form-control-lg " id="object" name="object" placeholder="Konu">
+                    <input type="text" class="form-control form-control-lg " id="object" name="Object" placeholder="Konu">
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-md-6">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Email adresiniz">
+                    <input type="email" class="form-control form-control-lg" id="email" name="Email" placeholder="Email adresiniz">
                 </div>
                 <div class="col-md-6">
                     <label for="phone">Telefon Numaranız</label>
-                    <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="Telefon Numaranız">
+                    <input type="tel" class="form-control form-control-lg" id="phone" name="Phone" placeholder="Telefon Numaranız">
                 </div>
             </div>
             <div class="form-group">
                 <label for="message">Mesaj</label>
-                <textarea class="form-control form-control-lg" id="message" rows="5" placeholder="Mesajınız"></textarea>
+                <textarea class="form-control form-control-lg" id="message" name="Content" rows="5" placeholder="Mesajınız"></textarea>
             </div>
-            <input type="submit" class="btn btn-success" />
+            <input id="submit" type="button" class="btn btn-success" value="Gönder" />
         </form>
     </div>
 
@@ -231,6 +230,33 @@
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
+
+        function contactFormClean(){
+            $('#name').val('');
+            $('#object').val('');
+            $('#email').val('');
+            $('#phone').val('');
+            $('#message').val('');
+
+        }
+
+        $('#submit').click(function (e) {
+            
+
+            $.post('/Admin/AddContact', $('#contactForm').serialize(), function (returnVal) {
+                if (returnVal==1) {
+                    contactFormClean();
+                } else {
+                    alert('Hata');
+                }
+
+                console.log(returnVal);
+                e.preventDefault();
+            })
+        })
+
+        
+
     </script>
     @RenderSection("scripts", false)
 </body>

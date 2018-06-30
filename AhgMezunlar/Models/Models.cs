@@ -47,12 +47,12 @@ namespace AhgMezunlar.Models
     public class ContactForm
     {
         public int Id { get; set; }
-        public string Oject { get; set; }
+        public string Object { get; set; }
         public string SenderName { get; set; }
         public string Email { get; set; }
         public int Phone { get; set; }
         public string Content { get; set; }
-        public bool ReadIt { get; set; }
+        public bool IsRead{ get; set; }
     }
     
 }
