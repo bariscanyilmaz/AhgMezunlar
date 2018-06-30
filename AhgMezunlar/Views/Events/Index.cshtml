@@ -34,43 +34,47 @@
 </div>
 @section scripts{ 
     <script>
-        let global_image = "/img/Defaults/320x220.png";
 
          //duyurulara click olduğunda yapılacakalr
         $('.one_third').on('click', function () {
             var content = $(this).find('p').text();
             var title = $(this).find('h6.heading').text();
-                                    
+            var image = $(this).data('image');
+            
             $('.modal .modal-body').text(content);
             $('.modal .modal-title').text(title);
-            $('.modal img').attr('src', global_image);
+            $('.modal img').attr('src',image);
             $('.modal').modal();
         });
-
 
         $('tbody tr').on('click', function () {
 
             let title = $(this).find('.row-title').text();
             let content = $(this).find('.row-preview-content').text();
             let source = $(this).data('source');
-            $('.modal img').attr('src', global_image);
+
+            $('.modal img').attr('src', source);
             $('.modal .modal-body').text(content);
             $('.modal .modal-title').text(title);
             $('.modal').modal();
 
         });
 
-
         //document ready popup
         $(document).ready(function () {
-            var content = $('.popup').find('p').text();
-            var title = $('.popup').find('h6.heading').text();
 
-            $('.modal img').attr('src', global_image);
-            $('.modal .modal-body').text(content);
-            $('.modal .modal-title').text(title);
-            $('.modal').modal();
+            $("ul.events:has(li)").parent().addClass('hasList');
+            if ($('ul.events').hasClass('hasList')) {
+                var content = $('.popup').find('p').text();
+                var title = $('.popup').find('h6.heading').text();
+                var image = $('.popup').data('image');
 
+                $('.modal img').attr('src', image);
+                $('.modal .modal-body').text(content);
+                $('.modal .modal-title').text(title);
+                $('.modal').modal();
+
+            }
         });
 
 

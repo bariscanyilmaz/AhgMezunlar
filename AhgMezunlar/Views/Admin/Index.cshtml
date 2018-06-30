@@ -38,17 +38,19 @@
             </tbody>
         </table>
     </div>
-    <div class=" mx-auto">
-        <div class="text-center alert alert-info">Slider'a görsel ekleyin</div>
-        <div class="form-group row">
-            <div class="col-md-6">
-                <input type="file" id="file" class="form-control-file">
-            </div>
-            <div class="col-md-6">
-                <div class="btn btn-primary">Kaydet</div>
-            </div>
-        </div>
 
+    <div class=" mx-auto">
+        <form id="homePageSliderForm" enctype="multipart/form-data">
+            <div class="text-center alert alert-info">Slider'a görsel ekleyin</div>
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <input type="file" id="sliderImage" name="file" class="form-control-file">
+                </div>
+                <div class="col-md-6">
+                    <div class="btn btn-primary">Kaydet</div>
+                </div>
+            </div>
+        </form>
     </div>
     <hr>
     <!--Anılar Yönetimi-->
@@ -66,7 +68,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td >1.</td>
+                    <td>1.</td>
                     <td data-image="/img/Defaults/320x220.png" data-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex corporis saepe mollitia nesciunt! A pariatur doloribus beatae, illo similique, alias dolorem accusantium obcaecati asperiores ipsam distinctio earum blanditiis, harum maiores?">Ahg de ilk gece</td>
                     <td data-from="Barış Can Yılmaz">Barış Can Yılmaz</td>
                     <td>
@@ -112,9 +114,9 @@
                             <label class="custom-control-label" for="customCheck1">Popup olarak göster</label>
                         </div>
                     </td>
-                    <td class="event-title"  data-image="/img/Defaults/320x220.png" >Geleneksel Pilav Günü</td>
+                    <td class="event-title" data-image="/img/Defaults/320x220.png">Geleneksel Pilav Günü</td>
                     <td class="event-content">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
-                    <td >
+                    <td>
                         <div class="btn btn-success"><i class="fa fa-edit"></i></div>
                         <div class="btn btn-danger"><i class="fa fa-trash"></i></div>
                         <div class="btn btn-primary"><i class="fa fa-eye"></i></div>
@@ -128,8 +130,8 @@
                             <label class="custom-control-label" for="customCheck1">Popup olarak göster</label>
                         </div>
                     </td>
-                    <td class="event-title" >Geleneksel Pilav Günü</td>
-                    <td class="event-content"  data-image="/img/Defaults/320x220.png">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
+                    <td class="event-title">Geleneksel Pilav Günü</td>
+                    <td class="event-content" data-image="/img/Defaults/320x220.png">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
                     <td>
                         <div class="btn btn-success"><i class="fa fa-edit"></i></div>
                         <div class="btn btn-danger"><i class="fa fa-trash"></i></div>
@@ -145,7 +147,7 @@
                         </div>
                     </td>
                     <td class="event-title" data-image="/img/Defaults/320x220.png">Geleneksel Pilav Günü</td>
-                    <td class="event-content" >Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
+                    <td class="event-content">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
                     <td>
                         <div class="btn btn-success"><i class="fa fa-edit"></i></div>
                         <div class="btn btn-danger"><i class="fa fa-trash"></i></div>
@@ -169,7 +171,7 @@
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td class="event-title" data-image="/img/Defaults/320x220.png" >Geleneksel Pilav Günü</td>
+                    <td class="event-title" data-image="/img/Defaults/320x220.png">Geleneksel Pilav Günü</td>
                     <td class="event-content">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
                     <td>
                         <div class="btn btn-success"><i class="fa fa-edit"></i></div>
@@ -201,10 +203,11 @@
         </table>
         <br />
         <div class="text-center alert alert-info">Etkinlik ekleyin veya düzenleyin</div>
-        <form class="events-panel mx-auto">
+        <form id="EventsForm" enctype="multipart/form-data" class="events-panel mx-auto">
+            <input id="eventId" name="Id" type="hidden" value="0"/>
             <div class="form-group">
                 <label for="icon">İkon </label>
-                <select id="icon" class="custom-select custom-select-lg">
+                <select id="icon" name="IconName" class="custom-select custom-select-lg">
                     <option value="fa-align-left">&#xf036; fa-align-left</option>
                     <option value="fa-align-right">&#xf038; fa-align-right</option>
                     <option value="fa-amazon">&#xf270; fa-amazon</option>
@@ -644,22 +647,28 @@
             </div>
             <div class="form-group">
                 <label for="title">Başlık</label>
-                <input type="text" id="title" class="form-control">
+                <input type="text" name="title" id="title" class="form-control">
             </div>
             <div class="form-group">
                 <label for="Image">Kapak Fotoğrafı</label>
-                <input type="file" id="Image" class="form-control-file">
+                <input type="file" name="image" id="Image" class="form-control-file">
             </div>
             <!-- Popup olarak listele-->
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="eventState">
-                <label class="custom-control-label" for="eventState">Ana Sayfa Etkinlik Listesinde Yayınla</label>
+            @*<div class="custom-control custom-checkbox">
+                <input type="checkbox" name="showOnPage" class="custom-control-input" id="customCheck5">
+                <label class="custom-control-label" for="customCheck5">Check this custom checkbox</label>
+            </div>*@
+            <div class="form-group">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="ShowOnPage" class="custom-control-input" id="showOnPage">
+                    <label class="custom-control-label" for="showOnPage">Ana Sayfa Etkinlik Listesinde Yayınla</label>
+                </div>
             </div>
             <div class="form-group ">
                 <label for="content">Duyuru Metni</label>
                 <textarea cols="40" rows="10" name="content" id="content"></textarea>
             </div>
-            <input type="submit" value="Kaydet" class="btn btn-primary">
+            <input type="button" value="Kaydet" class="btn btn-primary">
         </form>
     </div>
     <hr>
@@ -730,7 +739,7 @@
                 </div>
             </div>
             <!--Okunmayanlar-->
-            
+
             <div class="tab-pane " id="pills-unread" role="tabpanel" aria-labelledby="pills-unread-tab">
                 <div class="table-responsive">
                     <table class="unreadTable table table-sm mb-0 table-hover">
@@ -766,7 +775,7 @@
                 </div>
             </div>
             <!--Okunanlar-->
-            
+
             <div class="tab-pane" id="pills-read" role="tabpanel" aria-labelledby="pills-read-tab">
                 <div class="table-responsive">
                     <table class="readTable table table-sm mb-0 table-hover">
@@ -808,6 +817,65 @@
     <script src="https://cdn.ckeditor.com/4.9.2/basic/ckeditor.js"></script>
     <script>
         CKEDITOR.replace('content');
+        //
+        //Form upload
+        $('#homePageSliderForm .btn').click(function () {
+            let fileUpload = $('#sliderImage').get(0);
+            let files = fileUpload.files;
+            let data = new FormData();
+            for (var i = 0; i < files.length; i++) {
+                data.append(files[i].name, files[i]);
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "/Admin/AddSliderImage",
+                contentType: false,
+                processData: false,
+                data: data,
+                succes: function (returnVal) {
+                    console.log(returnVal);
+                },
+                error: function () {
+                    console.log('hata');
+                }
+
+            });
+        });
+
+        //
+        //events-panel
+        $("#EventsForm .btn").click(function () {
+            let fileUpload = $('#Image').get(0);
+            let files = fileUpload.files;
+            let data = new FormData();
+
+            let iconName = $("#icon").val();
+            let title = $("#title").val();
+            let showonPage = $("#showOnPage").val();
+            let content = $("#content").val();
+
+            for (var i = 0; i < fileUpload.length; i++) {
+                data.append(files[i].name, files[i]);
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "/Admin/AddOrUpdateEvents",
+                contentType: false,
+                processData: false,
+                data: $('#EventsForm').serialize() + "&image="+data,
+                succes: function (returnVal) {
+                    console.log(returnVal);
+                },
+                error: function () {
+                    console.log('hata');
+                }
+
+            });
+
+        })
+
 
         //accordion panel
         var accordion = document.getElementsByClassName("accordion");
@@ -848,7 +916,7 @@
         //moments table click
         $('.momentsTable tr').click(function () {
             let td2 = $(this).find('td:nth-child(2)');
-                
+
             let image = td2.data('image');
             let content = td2.data('content');
             let title = td2.text();
@@ -857,35 +925,35 @@
             $('.modal .modal-body').text(content);
             $('.modal .modal-title').text(title);
             $('.modal').modal();
-        });8
+        }); 8
 
 
         //events managment table click
-        $('.eventsManageTable tr').click(function () {
+        //$('.eventsManageTable tr').click(function () {
 
-            let title = $(this).find('.event-title').text();
-            let content = $(this).find('.event-content').text();
-            let image = $(this).find('.event-title').data('image');
+        //    let title = $(this).find('.event-title').text();
+        //    let content = $(this).find('.event-content').text();
+        //    let image = $(this).find('.event-title').data('image');
 
-            $('.modal img').attr('src', image);
-            $('.modal .modal-body').text(content);
-            $('.modal .modal-title').text(title);
-            $('.modal').modal();
+        //    $('.modal img').attr('src', image);
+        //    $('.modal .modal-body').text(content);
+        //    $('.modal .modal-title').text(title);
+        //    $('.modal').modal();
 
-        })
+        //})
 
         //Old evetns table click
-        $('.oldEventsTable tr').click(function () {
-            let title = $(this).find('.event-title').text();
-            let content = $(this).find('.event-content').text();
-            let image = $(this).find('.event-title').data('image');
+        //$('.oldEventsTable tr').click(function () {
+        //    let title = $(this).find('.event-title').text();
+        //    let content = $(this).find('.event-content').text();
+        //    let image = $(this).find('.event-title').data('image');
 
-            $('.modal img').attr('src', image);
-            $('.modal .modal-body').text(content);
-            $('.modal .modal-title').text(title);
-            $('.modal').modal();
+        //    $('.modal img').attr('src', image);
+        //    $('.modal .modal-body').text(content);
+        //    $('.modal .modal-title').text(title);
+        //    $('.modal').modal();
 
-        })
+        //})
 
 
         //İnbox panel

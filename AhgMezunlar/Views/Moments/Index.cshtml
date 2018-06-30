@@ -3,6 +3,15 @@
     ViewData["Title"] = "Index";
 }
 
+@if (ViewData["State"]!=null)
+{
+    <div class="d-flex justify-content-center">
+        <div class="alert alert-success">
+            @ViewData["State"]
+        </div>
+    </div>
+}
+
 <!-- Anılarımız-->
 <div class="wrapper row3">
     <section class="hoc container clear">
@@ -24,7 +33,7 @@
 
 <!-- Add Moment -->
 <div class="container ">
-    <form id="moment" class="form mx-auto">
+    <form asp-controller="Moments" enctype="multipart/form-data" asp-action="AddMoment" id="moment" class="form mx-auto">
         <h3>Anılarınızı Yazabilirsiniz</h3>
         <div class="form-group row">
             <div class="col-md-6">
@@ -33,7 +42,7 @@
             </div>
             <div class="col-md-6">
                 <label for="name">Gönderen adınız</label>
-                <input type="text" id="name" name="name" class="form-control form-control-lg">
+                <input type="text" id="senderName" name="senderName" class="form-control form-control-lg">
             </div>
         </div>
         <div class="form-group row">
@@ -43,14 +52,14 @@
             </div>
             <div class="col-md-6">
                 <label for="file">Kapak Kotoğrafı </label>
-                <input type="file" accept="image/*" id="file" class="form-control-file" name="file">
+                <input type="file" accept="image/*" id="file" class="form-control-file" name="file"  >
             </div>
         </div>
         <div class="form-group">
             <label for="content">İçerik</label>
             <textarea id="content" name="content"></textarea>
         </div>
-        <input type="submit" class="btn">
+        <input type="submit" class="btn btn-success" value="Gönder">
     </form>
 </div>
 <hr>
@@ -70,6 +79,5 @@
             $('.modal .modal-title').text(title);
             $('.modal').modal();
         });
-
     </script>
 }

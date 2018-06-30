@@ -241,22 +241,17 @@
         }
 
         $('#submit').click(function (e) {
-            
-
             $.post('/Admin/AddContact', $('#contactForm').serialize(), function (returnVal) {
                 if (returnVal==1) {
                     contactFormClean();
                 } else {
                     alert('Hata');
                 }
-
-                console.log(returnVal);
+                    
                 e.preventDefault();
             })
         })
-
         
-
     </script>
     @RenderSection("scripts", false)
 </body>

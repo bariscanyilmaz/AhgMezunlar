@@ -4,7 +4,7 @@
 {
     foreach (var item in Model)
     {
-        <li data-image="@item.PhotoPath" class="one_third @(item.PopupState == true ? "popup" : "")">
+        <li data-image="img/Events/@(item.PhotoPath)" class="one_third @(item.PopupState == true ? "popup" : "")">
             <article>
                 <a>
                     <i class="fa @item.IconName"></i>

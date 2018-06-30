@@ -148,7 +148,7 @@ else
         </div>
 
         <!-- main body -->
-        <ul class="nospace group cta">
+        <ul class="events nospace group cta">
             @await Component.InvokeAsync("Events")
         </ul>
         <!-- / main body -->
@@ -184,7 +184,7 @@ else
             window.open(link);
         });
 
-        let global_image = "/img/Defaults/320x220.png";
+        //let global_image = "/img/Defaults/320x220.png";
         //anılara tıklandığında yapılacaklar
         $('.moments .col-md-4').click(function () {
             var content = $(this).find('p').text();
@@ -201,8 +201,9 @@ else
         $('.one_third').on('click', function () {
             var content = $(this).find('p').text();
             var title = $(this).find('h6.heading').text();
+            var image = $(this).data('image');
 
-            $('.modal img').attr('src', global_image);
+            $('.modal img').attr('src',image);
             $('.modal .modal-body').text(content);
             $('.modal .modal-title').text(title);
 
@@ -213,16 +214,21 @@ else
         //document ready popup
         $(document).ready(function () {
 
-            //moment boş mu değil mi ve popup state true kontrolü yap
-            var content = $('.popup').find('p').text();
-            var title = $('.popup').find('h6.heading').text();
+            $("ul.events:has(li)").parent().addClass('hasList');
+            if ($('ul.events').hasClass('hasList')) {
+                var content = $('.popup').find('p').text();
+                var title = $('.popup').find('h6.heading').text();
+                var image = $('.popup').data('image');
 
-            $('.modal img').attr('src', global_image);
-            $('.modal .modal-body').text(content);
-            $('.modal .modal-title').text(title);
-            $('.modal').modal();
+                $('.modal img').attr('src', image);
+                $('.modal .modal-body').text(content);
+                $('.modal .modal-title').text(title);
+                $('.modal').modal();
+
+            }
 
 
+           
 
             //
             $("#myCarousel").carousel();
