@@ -203,7 +203,7 @@
         </table>
         <br />
         <div class="text-center alert alert-info">Etkinlik ekleyin veya düzenleyin</div>
-        <form id="EventsForm" enctype="multipart/form-data" class="events-panel mx-auto">
+        <form method="post" id="EventsForm" enctype="multipart/form-data" class="events-panel mx-auto">
             <input id="eventId" name="Id" type="hidden" value="0"/>
             <div class="form-group">
                 <label for="icon">İkon </label>
@@ -654,14 +654,10 @@
                 <input type="file" name="image" id="Image" class="form-control-file">
             </div>
             <!-- Popup olarak listele-->
-            @*<div class="custom-control custom-checkbox">
-                <input type="checkbox" name="showOnPage" class="custom-control-input" id="customCheck5">
-                <label class="custom-control-label" for="customCheck5">Check this custom checkbox</label>
-            </div>*@
             <div class="form-group">
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" name="ShowOnPage" class="custom-control-input" id="showOnPage">
-                    <label class="custom-control-label" for="showOnPage">Ana Sayfa Etkinlik Listesinde Yayınla</label>
+                    <input type="checkbox" name="ShowOnPage" class="form-check-input" id="ShowOnPage" >
+                    <label for="ShowOnPage">Ana Sayfa Etkinlik Listesinde Yayınla</label>
                 </div>
             </div>
             <div class="form-group ">
@@ -846,28 +842,64 @@
         //
         //events-panel
         $("#EventsForm .btn").click(function () {
-            let fileUpload = $('#Image').get(0);
-            let files = fileUpload.files;
-            let data = new FormData();
+
+            //let fileUpload = $('#Image').get(0);
+            //let files = fileUpload.files;
+           
 
             let iconName = $("#icon").val();
             let title = $("#title").val();
-            let showonPage = $("#showOnPage").val();
-            let content = $("#content").val();
+            let showonPage = document.getElementById("ShowOnPage").checked;
+            let content = CKEDITOR.instances['content'].getData();
+            let Id = $("#eventId").val();
 
-            for (var i = 0; i < fileUpload.length; i++) {
-                data.append(files[i].name, files[i]);
-            }
+            //for (var i = 0; i < fileUpload.length; i++) {
+            //    data.append(files[i].name, files[i]);
+            //}
+
+            //data.append($("#icon").attr("name"), iconName);
+            //data.append($("#title").attr("name"), title);
+            //data.append($("#ShowOnPage").attr("name"), showonPage);
+            //data.append($("#content").attr("name"), content);
+            //data.append($("#eventId").attr("name"), Id);
+
+
+            //USAGE: $("#form").serializefiles();
+            //(function ($) {
+            //    $.fn.serializefiles = function () {
+            //        var obj = $(this);
+            //        /* ADD FILE TO PARAM AJAX */
+            //        var formData = new FormData();
+            //        $.each($(obj).find("input[type='file']"), function (i, tag) {
+            //            $.each($(tag)[0].files, function (i, file) {
+            //                formData.append(tag.name, file);
+            //            });
+            //        });
+            //        var params = $(obj).serializeArray();
+            //        $.each(params, function (i, val) {
+            //            formData.append(val.name, val.value);
+            //        });
+            //        return formData;
+            //    };
+            //})(jQuery);
+
+            let form = $("#EventsForm");
+            let data = new FormData(form[0]);
+
+            data.set($("#ShowOnPage").attr("name"), showonPage);
+            data.set($("#content").attr("name"), content);
 
             $.ajax({
+
                 type: "POST",
                 url: "/Admin/AddOrUpdateEvents",
                 contentType: false,
                 processData: false,
-                data: $('#EventsForm').serialize() + "&image="+data,
+                data: data,
                 succes: function (returnVal) {
                     console.log(returnVal);
                 },
+
                 error: function () {
                     console.log('hata');
                 }

@@ -114,7 +114,7 @@ using AhgMezunlar.Models;
             WriteLiteral("\r\n\r\n    </section>\r\n</div>\r\n<hr>\r\n\r\n<!-- Add Moment -->\r\n<div class=\"container \">\r\n    ");
             EndContext();
             BeginContext(862, 1435, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "262a877264ab4086addabaa0607a9de3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "606efda9385d4a19853fc11e482b9eb9", async() => {
                 BeginContext(979, 1311, true);
                 WriteLiteral(@"
         <h3>Anılarınızı Yazabilirsiniz</h3>

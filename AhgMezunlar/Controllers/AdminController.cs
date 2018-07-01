@@ -7,6 +7,7 @@ using AhgMezunlar.Models;
 using AhgMezunlar.Models.Abstract;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using static System.Net.WebRequestMethods;
 
 namespace AhgMezunlar.Controllers
 {
@@ -14,12 +15,13 @@ namespace AhgMezunlar.Controllers
     {
         private IAdminRepository adminRepository;
         private ISliderRepository sliderRepository;
+        private IEventsRepository eventsRepository; 
 
-        public AdminController(IAdminRepository _adminRepository,ISliderRepository _sliderRepository)
+        public AdminController(IAdminRepository _adminRepository,ISliderRepository _sliderRepository, IEventsRepository _eventsRepository)
         {
             adminRepository = _adminRepository;
             sliderRepository = _sliderRepository;
-
+            eventsRepository = _eventsRepository;
         }
 
         public IActionResult Index()
@@ -76,18 +78,59 @@ namespace AhgMezunlar.Controllers
             }
         }
 
-        public JsonResult AddOrUpdateEvents(Events events, IFormFile image)
+        [HttpPost]
+        public async Task<JsonResult> AddOrUpdateEvents(Events events)
         {
             try
             {
-                var files = HttpContext.Request.Form.Files;
+                if (events!=null)
+                {
+                    var files = HttpContext.Request.Form.Files;
+                    //Yeni Event oluşturma
+                    if (events.Id==0)
+                    {
+                        Events newEvent = new Events();
+                        newEvent.IconName = events.IconName;
+                        newEvent.ShowOnPage = events.ShowOnPage;
+                        newEvent.Title = events.Title;
+                        newEvent.PopupState = events.PopupState;
+                        newEvent.Content = events.Content;
 
-                return Json(1);
+                        //image save
+                        if (files!=null)
+                        {
+                            var file = files[0];
+
+                            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\img\\Events", file.FileName);
+                            using (var stream = new FileStream(path, FileMode.Create))
+                            {
+                                await file.CopyToAsync(stream);
+                            }
+
+                            newEvent.PhotoPath = file.FileName;
+                            eventsRepository.AddEvent(newEvent);
+
+                        }
+                        else
+                        {
+                            eventsRepository.AddEvent(newEvent);
+                        }
+
+                        return Json(1);
+                    }
+                    return Json(1);
+                }
+                return Json(0);
+                
+
+
+
+
             }
             catch (Exception e)
             {
-                return Json(-1);
 
+                return Json(-1);
             }
             
         }

@@ -101,7 +101,7 @@ using AhgMezunlar.Models;
         ");
             EndContext();
             BeginContext(1480, 948, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b3ebd57d9ee24991addc1666bb17bc77", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "51e5762f8bfd44188aade451d8747d98", async() => {
                 BeginContext(1486, 615, true);
                 WriteLiteral(@"
             <input type=""hidden"" id=""user-id"" name=""user-id"" value="""" />
@@ -118,7 +118,7 @@ using AhgMezunlar.Models;
                     ");
                 EndContext();
                 BeginContext(2101, 67, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b38b47824aaf49cfa2da019abe35ee35", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ee2f88d3b37540a7851a92c6d1605818", async() => {
                     BeginContext(2127, 32, true);
                     WriteLiteral("Kullanıcı Yetki Derecesi Seçiniz");
                     EndContext();
@@ -144,7 +144,7 @@ using AhgMezunlar.Models;
                 WriteLiteral("\r\n                    ");
                 EndContext();
                 BeginContext(2190, 35, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8295597f79f541cfb9cb5eabf89c550f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7db101bccee4ab2b24a2bf78465e625", async() => {
                     BeginContext(2208, 8, true);
                     WriteLiteral("Yönetici");
                     EndContext();
@@ -166,7 +166,7 @@ using AhgMezunlar.Models;
                 WriteLiteral("\r\n                    ");
                 EndContext();
                 BeginContext(2247, 43, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5bce980f23e40b4a49bc40eedcd1a80", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "589b880cf4a7474a8d2bc8b2827f1693", async() => {
                     BeginContext(2265, 16, true);
                     WriteLiteral("Normal Kullanıcı");
                     EndContext();
