@@ -40,19 +40,7 @@ namespace AhgMezunlar.Models.Concrete
         {
             return dbContext.Events.Where(i => i.ShowOnPage == true);
         }
-
-        public void SaveEvent(Events events)
-        {
-            if (events.Id==0)
-            {
-                AddEvent(events);
-            }
-            else
-            {
-                UpdateEvent(events);
-            }
-        }
-
+        
         public void UpdateEvent(Events events)
         {
             var updateevent = dbContext.Events.FirstOrDefault(p => p.Id == events.Id);
@@ -66,6 +54,11 @@ namespace AhgMezunlar.Models.Concrete
                 updateevent.Title = events.Title;
                 dbContext.SaveChanges();
             }
+        }
+
+        public Events GetEvent(int id)
+        {
+            return dbContext.Events.SingleOrDefault(ev => ev.Id == id);
         }
     }
 }

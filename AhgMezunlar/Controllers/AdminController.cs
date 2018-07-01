@@ -116,16 +116,40 @@ namespace AhgMezunlar.Controllers
                             eventsRepository.AddEvent(newEvent);
                         }
 
-                        return Json(1);
                     }
+                    else
+                    {
+                        var oldEvent = eventsRepository.GetEvent(events.Id);
+                        oldEvent.IconName = events.IconName;
+                        oldEvent.PopupState = events.PopupState;
+                        oldEvent.ShowOnPage = events.ShowOnPage;
+                        oldEvent.Title = events.Title;
+
+                        if (files!=null)
+                        {
+                            var file = files[0];
+
+                            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\img\\Events", file.FileName);
+                            using (var stream = new FileStream(path, FileMode.Create))
+                            {
+                                await file.CopyToAsync(stream);
+                            }
+
+                            System.IO.File.Delete(oldEvent.PhotoPath);
+                            oldEvent.PhotoPath = file.FileName;
+                            eventsRepository.UpdateEvent(oldEvent);
+
+                            
+                        }
+                        else
+                        {
+                            eventsRepository.UpdateEvent(oldEvent);
+                        }
+                    }
+
                     return Json(1);
                 }
                 return Json(0);
-                
-
-
-
-
             }
             catch (Exception e)
             {
