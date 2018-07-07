@@ -15,18 +15,24 @@ namespace AhgMezunlar.Controllers
     {
         private IAdminRepository adminRepository;
         private ISliderRepository sliderRepository;
-        private IEventsRepository eventsRepository; 
-
-        public AdminController(IAdminRepository _adminRepository,ISliderRepository _sliderRepository, IEventsRepository _eventsRepository)
+        private IEventsRepository eventsRepository;
+        private IMomentsRepository momentsRepository;
+        public AdminController(IAdminRepository _adminRepository,ISliderRepository _sliderRepository, IEventsRepository _eventsRepository, IMomentsRepository _momentsRepository)
         {
             adminRepository = _adminRepository;
             sliderRepository = _sliderRepository;
             eventsRepository = _eventsRepository;
+            momentsRepository = _momentsRepository;
         }
 
         public IActionResult Index()
         {
             return View();
+        }
+
+        public JsonResult GetSliderImages()
+        {
+            return Json(sliderRepository.GetSliderImages());
         }
 
         public async Task<JsonResult> AddSliderImage()
@@ -44,10 +50,11 @@ namespace AhgMezunlar.Controllers
                         using (var stream = new FileStream(path, FileMode.Create))
                         {
                             await item.CopyToAsync(stream);
-                            SliderImage sliderImage = new SliderImage();
-                            sliderImage.Path = item.FileName;
-                            sliderRepository.AddSliderIamge(sliderImage);
                         }
+
+                        SliderImage sliderImage = new SliderImage();
+                        sliderImage.Path = item.FileName;
+                        sliderRepository.AddSliderIamge(sliderImage);
                     }
                 }
 
@@ -59,6 +66,24 @@ namespace AhgMezunlar.Controllers
                 return Json(-1);
             }
 
+        }
+
+        public JsonResult DeleteSliderImage(int id)
+        {
+            var sliderIamge = sliderRepository.GetSliderImage(id);
+
+            if (sliderIamge!=null)
+            {
+                sliderRepository.DeleteSliderImage(id);
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\img\\Slider", sliderIamge.Path);
+                System.IO.File.Delete(path);
+
+                return Json(1);
+            }
+            else
+            {
+                return Json(-1);
+            }
         }
 
         public JsonResult AddContact(ContactForm contactForm)
@@ -135,7 +160,8 @@ namespace AhgMezunlar.Controllers
                                 await file.CopyToAsync(stream);
                             }
 
-                            System.IO.File.Delete(oldEvent.PhotoPath);
+                            var oldEventPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\img\\Events", oldEvent.PhotoPath);
+                            System.IO.File.Delete(oldEventPath);
                             oldEvent.PhotoPath = file.FileName;
                             eventsRepository.UpdateEvent(oldEvent);
 
@@ -158,5 +184,85 @@ namespace AhgMezunlar.Controllers
             }
             
         }
+
+        public JsonResult DeleteEvent(int id)
+        {
+            var deleteEvent = eventsRepository.GetEvent(id);
+            if (deleteEvent!=null)
+            {
+                eventsRepository.DeleteEvent(id);
+
+                var oldEventPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\img\\Events",deleteEvent.PhotoPath);
+                System.IO.File.Delete(oldEventPath);
+
+                return Json(1);
+            }
+            else
+            {
+                return Json(-1);
+            }
+        }
+
+        public JsonResult UpdatePopUp(int id, bool state)
+        {
+            var ev = eventsRepository.GetEvent(id);
+            if (ev!=null)
+            {
+
+                ev.PopupState = state;
+                eventsRepository.UpdateEvent(ev);
+                return Json(1);
+            }
+            else
+            {
+                return Json(-1);
+            }
+
+        }
+
+        public JsonResult GetEvents()
+        {
+            return Json(eventsRepository.GetEvents());
+        }
+
+
+        #region Moments Functions
+        public JsonResult GetMoments()
+        {
+            return Json(momentsRepository.GetMoments().ToList());
+        }
+
+        public JsonResult DeleteMoment(int id)
+        {
+            var moment = momentsRepository.GetMoments().SingleOrDefault(i => i.Id == id);
+
+            if (moment!=null)
+            {
+                momentsRepository.DeleteMoment(id);
+
+                return Json(1);
+            }
+            else
+            {
+                return Json(-1);
+            }
+        }
+
+        public JsonResult UpdateMoment(int id,bool showState)
+        {
+            var moment = momentsRepository.GetMoment(id);
+            if (moment!=null)
+            {
+                momentsRepository.UpdateMoment(showState, id);
+                return Json(1);
+            }
+            else
+            {
+                return Json(-1);
+            }
+        }
+
+        #endregion
+
     }
 }

@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
 }
 
@@ -12,30 +11,15 @@
     <!--Ana Slider-->
     <h3>Ana Slider Yönetimi</h3>
     <div class="table-responsive">
-        <table class="table table-sm table-hover">
+        <table id="sliderTable" class=" table table-sm table-hover">
             <thead>
                 <tr>
                     <th class="w-10">#</th>
                     <th>Adı</th>
-                    <th></th>
+                    <th class="w-20"></th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Ahgpilav.jpeg</td>
-                    <td>
-                        <div class="btn btn-sm btn-danger">Kaldır</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1.</td>
-                    <td>Ahgpilav.jpeg</td>
-                    <td>
-                        <div class="btn btn-sm btn-danger">Kaldır</div>
-                    </td>
-                </tr>
-            </tbody>
+            <tbody></tbody>
         </table>
     </div>
 
@@ -44,7 +28,7 @@
             <div class="text-center alert alert-info">Slider'a görsel ekleyin</div>
             <div class="form-group row">
                 <div class="col-md-6">
-                    <input type="file" id="sliderImage" name="file" class="form-control-file">
+                    <input type="file" accept="image/*" id="sliderImage" name="file" class="form-control-file">
                 </div>
                 <div class="col-md-6">
                     <div class="btn btn-primary">Kaydet</div>
@@ -62,8 +46,8 @@
                     <th class="w-10">#</th>
                     <th>Başlık</th>
                     <th>Gönderen</th>
-                    <th>Yayın Durumu</th>
-                    <th class="w-10"><i data-toggle="tooltip" title="Görüntülemek için satırlara tıklayabilirsiniz" class="fa fa-question-circle-o fa-2x"></i></th>
+                    <th class="w-10">Yayın Durumu</th>
+                    <th class="w-10"><i data-toggle="tooltip" title="Görüntülemek için göz ikonuna tıklayabilirsiniz" class="fa fa-question-circle-o fa-2x"></i></th>
                 </tr>
             </thead>
             <tbody>
@@ -72,17 +56,24 @@
                     <td data-image="/img/Defaults/320x220.png" data-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex corporis saepe mollitia nesciunt! A pariatur doloribus beatae, illo similique, alias dolorem accusantium obcaecati asperiores ipsam distinctio earum blanditiis, harum maiores?">Ahg de ilk gece</td>
                     <td data-from="Barış Can Yılmaz">Barış Can Yılmaz</td>
                     <td>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                            <label class="form-check-label" for="inlineRadio1">Yayınla</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" checked>
-                            <label class="form-check-label" for="inlineRadio2">Görüntüleme</label>
-                        </div>
+                        <input type="checkbox" name="checkbox" class="showMoment" />
                     </td>
                     <td>
-                        <div class="btn btn-sm btn-danger">Sil</div>
+                        <div class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></div>
+                        <div class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td data-image="/img/Defaults/320x220.png" data-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex corporis saepe mollitia nesciunt! A pariatur doloribus beatae, illo similique, alias dolorem accusantium obcaecati asperiores ipsam distinctio earum blanditiis, harum maiores?">Title</td>
+
+                    <td data-from="SenderName">SenderName</td>
+                    <td>
+                        <input type="checkbox" name="checkbox" class="showMoment" />
+                    </td>
+                    <td>
+                        <div class="btn btn-sm btn-danger" data-id="MomentId"><i class="fa fa-trash"></i></div>
+                        <div class="btn btn-sm btn-primary" data-id="MomentId"><i class="fa fa-eye"></i></div>
                     </td>
                 </tr>
             </tbody>
@@ -99,21 +90,18 @@
             <thead>
                 <tr>
                     <th class="w-5">#</th>
-                    <th>PopUp Durumu</th>
+                    <th class="w-10">PopUp Durumu</th>
+                    <th class="w-10">Ana Sayfada Göster</th>
                     <th>Etkinlik Adı</th>
                     <th>Duyuru Metni</th>
                     <th><i data-toggle="tooltip" title="Görüntülemek için göz ikonuna tıklayabilirsiniz" class="fa fa-question-circle-o fa-2x"></i></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr data-id="1" data-showOnPage="true" data-icon="fa-list">
                     <td>1</td>
-                    <td>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" name="checkbox" class="custom-control-input" id="customCheck1">
-                            <label class="custom-control-label" for="customCheck1">Popup olarak göster</label>
-                        </div>
-                    </td>
+                    <td><input type="radio" name="radio" checked class="popUpCheck"></td>
+                    <td><input type="checkbox" checked /></td>
                     <td class="event-title" data-image="/img/Defaults/320x220.png">Geleneksel Pilav Günü</td>
                     <td class="event-content">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
                     <td>
@@ -122,14 +110,10 @@
                         <div class="btn btn-primary"><i class="fa fa-eye"></i></div>
                     </td>
                 </tr>
-                <tr>
+                <tr data-id="2" data-showOnPage="true" data-icon="fa-list">
                     <td>2</td>
-                    <td>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" name="checkbox" class="custom-control-input" id="customCheck1">
-                            <label class="custom-control-label" for="customCheck1">Popup olarak göster</label>
-                        </div>
-                    </td>
+                    <td><input type="radio" name="radio" class="popUpCheck"></td>
+                    <td><input type="checkbox" checked /></td>
                     <td class="event-title">Geleneksel Pilav Günü</td>
                     <td class="event-content" data-image="/img/Defaults/320x220.png">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
                     <td>
@@ -138,16 +122,12 @@
                         <div class="btn btn-primary"><i class="fa fa-eye"></i></div>
                     </td>
                 </tr>
-                <tr>
+                <tr data-id="3" data-showOnPage="true" data-icon="fa-list">
                     <td>3</td>
-                    <td>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" name="checkbox" class="custom-control-input" id="customCheck2">
-                            <label class="custom-control-label" for="customCheck2">Popup olarak göster</label>
-                        </div>
-                    </td>
+                    <td><input type="radio" name="radio" class=" popUpCheck"></td>
+                    <td><input type="checkbox" checked /></td>
                     <td class="event-title" data-image="/img/Defaults/320x220.png">Geleneksel Pilav Günü</td>
-                    <td class="event-content">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
+                    <td class="event-content" data-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex corporis saepe mollitia nesciunt! A pariatur doloribus beatae, illo similique, alias dolorem accusantium obcaecati asperiores ipsam distinctio earum blanditiis, harum maiores?">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
                     <td>
                         <div class="btn btn-success"><i class="fa fa-edit"></i></div>
                         <div class="btn btn-danger"><i class="fa fa-trash"></i></div>
@@ -163,6 +143,7 @@
             <thead>
                 <tr>
                     <th class="w-5">#</th>
+                    <th class="w-10">Ana Sayfa Yayınla</th>
                     <th>Etkinlik Adı</th>
                     <th>Duyuru Metni</th>
                     <th><i data-toggle="tooltip" title="Görüntülemek için göz ikonlarına tıklayabilirsiniz" class="fa fa-question-circle-o fa-2x"></i></th>
@@ -171,6 +152,7 @@
             <tbody>
                 <tr>
                     <td>1</td>
+                    <td><input type="checkbox" /></td>
                     <td class="event-title" data-image="/img/Defaults/320x220.png">Geleneksel Pilav Günü</td>
                     <td class="event-content">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
                     <td>
@@ -181,6 +163,7 @@
                 </tr>
                 <tr>
                     <td>2</td>
+                    <td><input type="checkbox" /></td>
                     <td class="event-title" data-image="/img/Defaults/320x220.png">Geleneksel Pilav Günü</td>
                     <td class="event-content">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
                     <td>
@@ -191,6 +174,7 @@
                 </tr>
                 <tr>
                     <td>3</td>
+                    <td><input type="checkbox" /></td>
                     <td class="event-title" data-image="/img/Defaults/320x220.png">Geleneksel Pilav Günü</td>
                     <td class="event-content">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
                     <td>
@@ -203,8 +187,9 @@
         </table>
         <br />
         <div class="text-center alert alert-info">Etkinlik ekleyin veya düzenleyin</div>
+        <!-- Event Form -->
         <form method="post" id="EventsForm" enctype="multipart/form-data" class="events-panel mx-auto">
-            <input id="eventId" name="Id" type="hidden" value="0"/>
+            <input id="eventId" name="Id" type="hidden" value="0" />
             <div class="form-group">
                 <label for="icon">İkon </label>
                 <select id="icon" name="IconName" class="custom-select custom-select-lg">
@@ -653,13 +638,8 @@
                 <label for="Image">Kapak Fotoğrafı</label>
                 <input type="file" name="image" id="Image" class="form-control-file">
             </div>
-            <!-- Popup olarak listele-->
-            <div class="form-group">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" name="ShowOnPage" class="form-check-input" id="ShowOnPage" >
-                    <label for="ShowOnPage">Ana Sayfa Etkinlik Listesinde Yayınla</label>
-                </div>
-            </div>
+            <!--Show on page  -->
+            <input type="hidden" name="ShowOnPage" value="false" />
             <div class="form-group ">
                 <label for="content">Duyuru Metni</label>
                 <textarea cols="40" rows="10" name="content" id="content"></textarea>
@@ -810,78 +790,117 @@
 
 <!-- Sections-->
 @section scripts{
-    <script src="https://cdn.ckeditor.com/4.9.2/basic/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace('content');
-        //
-        //Form upload
-        $('#homePageSliderForm .btn').click(function () {
-            let fileUpload = $('#sliderImage').get(0);
-            let files = fileUpload.files;
-            let data = new FormData();
-            for (var i = 0; i < files.length; i++) {
-                data.append(files[i].name, files[i]);
-            }
+<script src="https://cdn.ckeditor.com/4.9.2/basic/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('content');
+</script>
+<script>
 
-            $.ajax({
-                type: "POST",
-                url: "/Admin/AddSliderImage",
-                contentType: false,
-                processData: false,
-                data: data,
-                succes: function (returnVal) {
-                    console.log(returnVal);
-                },
-                error: function () {
-                    console.log('hata');
-                }
-
+    //Slider functions
+    function GetSliderImages() {
+        $.get('/Admin/GetSliderImages', function (sliderImages) {
+            $.each(sliderImages, function (indis, sliderImage) {
+                $("#sliderTable tbody").append(`<tr><td>${indis + 1}</td><td>${sliderImage.path}</td><td><div data-id="${sliderImage.id}" class="btn btn-sm btn-danger">Kaldır</div></td></tr>`);
             });
         });
+    }
 
-        //
-        //events-panel
+    function AddSliderImage() {
+        let fileUpload = $('#sliderImage').get(0);
+        let files = fileUpload.files;
+        let data = new FormData();
+        for (var i = 0; i < files.length; i++) {
+            data.append(files[i].name, files[i]);
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "/Admin/AddSliderImage",
+            contentType: false,
+            processData: false,
+            data: data
+        }).done(function (value) {
+            $("#sliderTable tbody tr").remove();
+            GetSliderImages();
+        })
+
+        
+    }
+
+
+    //Moments Functions
+    function GetMoments() {
+        $.get('/Admin/GetMoments', function (momentsList) {
+            $.each(momentsList, function (indis, moment) {
+                $('.momentsTable tbody').append(`<tr>
+                    <td>${indis + 1}</td>
+                    <td data-image="/img/Moments/${moment.coverPhotoPath}" data-content="${moment.content}">${moment.title}</td>
+                    <td >${moment.senderName}</td>
+                    <td>
+                        <input type="checkbox" ${moment.showState == true ? "checked" : " "} name="checkbox" data-id=${moment.id} class="showMoment" />
+                    </td>
+                    <td>
+                        <div data-id=${moment.id} class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></div>
+                        <div class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></div>
+                    </td>
+                </tr>`)
+            })
+        })
+    };
+
+
+    //Sayfa yüklendiğinde yapılacaklar
+    $(document).ready(function (e) {
+        GetSliderImages();
+        GetMoments();
+
+
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+    })
+
+
+    //slider işlemleri
+    $(function () {
+        //Add Slider Image
+        $('#homePageSliderForm').on('click', '.btn-primary', function (e) {
+            AddSliderImage();
+
+            e.preventDefault();
+            e.stopImmediatePropagation();
+        });
+
+        //Delete Slider Image
+        $('#sliderTable').on('click', ' .btn-danger', function (e) {
+            let id = $(this).data('id');
+            let row = $(this).parent().parent();
+            $.post("/Admin/DeleteSliderImage", { Id: id }, function (data) {
+                if (data == 1) {
+                    row.remove();
+                }    
+            });
+
+            e.preventDefault();
+            e.stopImmediatePropagation();
+        });
+
+    });
+
+
+    
+
+
+    //Events İşlemleri
+    $(function () {
+        //save-events
         $("#EventsForm .btn").click(function () {
-
-            //let fileUpload = $('#Image').get(0);
-            //let files = fileUpload.files;
-           
 
             let iconName = $("#icon").val();
             let title = $("#title").val();
             let showonPage = document.getElementById("ShowOnPage").checked;
             let content = CKEDITOR.instances['content'].getData();
             let Id = $("#eventId").val();
-
-            //for (var i = 0; i < fileUpload.length; i++) {
-            //    data.append(files[i].name, files[i]);
-            //}
-
-            //data.append($("#icon").attr("name"), iconName);
-            //data.append($("#title").attr("name"), title);
-            //data.append($("#ShowOnPage").attr("name"), showonPage);
-            //data.append($("#content").attr("name"), content);
-            //data.append($("#eventId").attr("name"), Id);
-
-
-            //USAGE: $("#form").serializefiles();
-            //(function ($) {
-            //    $.fn.serializefiles = function () {
-            //        var obj = $(this);
-            //        /* ADD FILE TO PARAM AJAX */
-            //        var formData = new FormData();
-            //        $.each($(obj).find("input[type='file']"), function (i, tag) {
-            //            $.each($(tag)[0].files, function (i, file) {
-            //                formData.append(tag.name, file);
-            //            });
-            //        });
-            //        var params = $(obj).serializeArray();
-            //        $.each(params, function (i, val) {
-            //            formData.append(val.name, val.value);
-            //        });
-            //        return formData;
-            //    };
-            //})(jQuery);
 
             let form = $("#EventsForm");
             let data = new FormData(form[0]);
@@ -908,10 +927,138 @@
 
             $('#EventsForm')[0].reset();
             CKEDITOR.instances['content'].setData('');
+        });
+
+        //delete-events
+        $(".eventsManageTable .btn-danger").click(function () {
+            alert('click')
+            $.post("/Admin/DeleteEvents", $(this).parent().parent().data('id'), function (data) {
+
+                console.log(data);
+            });
+
+            //update table
+        });
+
+        //update popup events
+        $(".eventsManageTable .popUpCheck").click(function () {
+            let id = $(this).parent().parent().parent().data('id');
+            let state = $(this).prop('checked');
+            $.post("/Admin/UpdatePopUp", { Id: id, State: state }, function (data) {
+                console.log(data);
+            });
+
+
+        });
+
+        //edit events
+        $(".eventsManageTable .btn-success").click(function () {
+            let row = $(this).parent().parent();
+
+            let id = row.data('id');
+            let title = row.find('.event-title').val();
+            let content = row.find('.event-content').data('content');
+            let showOnPage = row.data('data-showOnPage');
+            let image = row.find('.event-title').data('image');
+            let popUp = row.find('.popUpCheck').prop('checked');
+            let iconName = row.data('icon');
+
+
+            $.post('/Admin/AddOrUpdateEvents', { Id: id, Title: title, ShowOnPage: showOnPage, Content: content, PhotoPath: image, IconName: iconName, PopupState: popUp }, function (data) {
+                console.log(data);
+            })
+
+            //update table
+
+        });
+
+        //See Event
+        $('.eventsManageTable .btn-primary').click(function () {
+            let row = $(this).parent().parent();
+
+
         })
 
+    });
 
-        //accordion panel
+
+    //Moments managment
+    $(function () {
+
+        //moment show
+        $('.momentsTable .btn-primary').click(function () {
+            let row = $(this).parent().parent();
+
+            let td2 = row.find('td:nth-child(2)');
+            let image = td2.data('image');
+            let content = td2.data('content');
+            let title = td2.text();
+
+            $('.modal img').attr('src', image);
+            $('.modal .modal-body').text(content);
+            $('.modal .modal-title').text(title);
+            $('.modal').modal();
+        });
+
+
+        //delete moment
+        $('.momentsTable .btn-danger').click(function () {
+            let id = $(this).data('id');
+            let row = $(this).parent().parent();
+            $.post('/Admin/DeleteMoment', "Id=" + id, function (returnVal) {
+                if (returnVal == 1) {
+                    row.remove();
+                }
+            })
+        });
+
+        $('.momentsTable').on('change', '.showMoment', function () {
+
+            let id = $(this).data('id');
+            let showState = $(this).prop('checked');
+
+            console.log(id);
+            console.log(showState);
+
+            $.post('/Admin/UpdateMoment', 'Id=' + id + '&showState=' + showState, function (returnVal) {
+                console.log(returnVal);
+            });
+
+
+        });
+
+        //events managment table click
+        //$('.eventsManageTable tr').click(function () {
+
+        //    let title = $(this).find('.event-title').text();
+        //    let content = $(this).find('.event-content').text();
+        //    let image = $(this).find('.event-title').data('image');
+
+        //    $('.modal img').attr('src', image);
+        //    $('.modal .modal-body').text(content);
+        //    $('.modal .modal-title').text(title);
+        //    $('.modal').modal();
+
+        //})
+
+        //Old evetns table click
+        //$('.oldEventsTable tr').click(function () {
+        //    let title = $(this).find('.event-title').text();
+        //    let content = $(this).find('.event-content').text();
+        //    let image = $(this).find('.event-title').data('image');
+
+        //    $('.modal img').attr('src', image);
+        //    $('.modal .modal-body').text(content);
+        //    $('.modal .modal-title').text(title);
+        //    $('.modal').modal();
+
+        //})
+    });
+
+
+    //accordion panel
+    $(function () {
+
         var accordion = document.getElementsByClassName("accordion");
         var i;
         for (i = 0; i < accordion.length; i++) {
@@ -947,48 +1094,6 @@
             element = document.getElementById(tabpaneid);
             element.style.display = 'flex';
         }
-        //moments table click
-        $('.momentsTable tr').click(function () {
-            let td2 = $(this).find('td:nth-child(2)');
-
-            let image = td2.data('image');
-            let content = td2.data('content');
-            let title = td2.text();
-
-            $('.modal img').attr('src', image);
-            $('.modal .modal-body').text(content);
-            $('.modal .modal-title').text(title);
-            $('.modal').modal();
-        }); 8
-
-
-        //events managment table click
-        //$('.eventsManageTable tr').click(function () {
-
-        //    let title = $(this).find('.event-title').text();
-        //    let content = $(this).find('.event-content').text();
-        //    let image = $(this).find('.event-title').data('image');
-
-        //    $('.modal img').attr('src', image);
-        //    $('.modal .modal-body').text(content);
-        //    $('.modal .modal-title').text(title);
-        //    $('.modal').modal();
-
-        //})
-
-        //Old evetns table click
-        //$('.oldEventsTable tr').click(function () {
-        //    let title = $(this).find('.event-title').text();
-        //    let content = $(this).find('.event-content').text();
-        //    let image = $(this).find('.event-title').data('image');
-
-        //    $('.modal img').attr('src', image);
-        //    $('.modal .modal-body').text(content);
-        //    $('.modal .modal-title').text(title);
-        //    $('.modal').modal();
-
-        //})
-
 
         //İnbox panel
         //inboxTable
@@ -1027,7 +1132,7 @@
 
         });
 
+    });
 
-
-    </script>
+</script>
 }

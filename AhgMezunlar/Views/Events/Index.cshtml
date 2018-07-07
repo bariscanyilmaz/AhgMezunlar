@@ -22,11 +22,11 @@
             </thead>
             <tbody>
                 <tr data-source="~/img/Defaults/320x220.png" data-content=""><td>1</td><td class="row-title">Pilav Günü</td><td class="row-preview-content">Geleneksel Pilav Günümüze Tüm öğretmen, öğrenci ve velilerimiz davetlidir...</td></tr>
-                @{ var index = 0;}
+                @{ var index = 1;}
                 @foreach (var item in Model)
                 {
                     <tr data-source="@(item.PhotoPath==null?"~/img/Defaults/320x220.png":item.PhotoPath)" data-content="@item.Content"><td>@index</td><td class="row-title">@item.Title</td><td class="row-preview-content">@item.Content...</td></tr>
-                    @(index)
+                    @(index++)
                 }
             </tbody>
         </table>

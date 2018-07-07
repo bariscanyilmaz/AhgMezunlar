@@ -25,11 +25,11 @@ namespace AhgMezunlar.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult> AddMoment(Moments moment,IFormFile file)
+        public async Task<ActionResult> AddMoment(Moments moment, IFormFile file)
         {
             try
-            { 
-                if (file!= null)
+            {
+                if (file != null)
                 {
 
                     var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\img\\Moments", file.FileName);
@@ -55,5 +55,9 @@ namespace AhgMezunlar.Controllers
             }
 
         }
+
+       
+
+
     }
 }

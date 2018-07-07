@@ -15,7 +15,7 @@ namespace AhgMezunlar.ViewComponents
 
         public IViewComponentResult Invoke()
         {
-            return View(eventsRepository.GetShowOnPage());
+            return View(eventsRepository.GetShowOnPage().Take(3).ToList());
         }
     }
 }

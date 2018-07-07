@@ -8,6 +8,7 @@ namespace AhgMezunlar.Models.Abstract
     public interface IMomentsRepository
     {
         IQueryable<Moments> GetMoments();
+        Moments GetMoment(int id);
         void DeleteMoment(int momentId);
         void AddMoment(Moments moment);
         /// <summary>

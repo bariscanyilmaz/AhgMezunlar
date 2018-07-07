@@ -30,6 +30,11 @@ namespace AhgMezunlar.Models.Concrete
             }
         }
 
+        public Moments GetMoment(int id)
+        {
+            return dbContext.Moments.SingleOrDefault(m => m.Id == id);
+        }
+
         public IQueryable<Moments> GetMoments()
         {
             return dbContext.Moments;

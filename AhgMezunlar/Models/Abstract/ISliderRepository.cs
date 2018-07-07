@@ -10,5 +10,6 @@ namespace AhgMezunlar.Models.Abstract
         IQueryable<SliderImage> GetSliderImages();
         void AddSliderIamge(SliderImage sliderImage);
         void DeleteSliderImage(int id);
+        SliderImage GetSliderImage(int id);
     }
 }

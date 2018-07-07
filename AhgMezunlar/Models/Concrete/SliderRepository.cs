@@ -9,6 +9,7 @@ namespace AhgMezunlar.Models.Concrete
     public class SliderRepository : ISliderRepository
     {
         private ApplicationDbContext dbContext;
+
         public SliderRepository(ApplicationDbContext _dbContext)
         {
             dbContext = _dbContext;
@@ -23,6 +24,12 @@ namespace AhgMezunlar.Models.Concrete
         public void DeleteSliderImage(int id)
         { var image = dbContext.SliderImages.FirstOrDefault(s => s.Id == id);
             dbContext.SliderImages.Remove(image);
+            dbContext.SaveChanges();
+        }
+
+        public SliderImage GetSliderImage(int id)
+        {
+            return dbContext.SliderImages.SingleOrDefault(im => im.Id == id);
         }
 
         public IQueryable<SliderImage> GetSliderImages()
