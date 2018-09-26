@@ -8,7 +8,7 @@ namespace AhgMezunlar.Models.Abstract
     public interface IAccountRepository
     {
         ApplicationUser GetUser(string email);
-        IQueryable<ApplicationUser> GetUsers();
+        Task<List<UserInfoModel>> GetUsers();
         void AddUser(RegisterModel registerModel);
         void DeleteUser(string email);
         void UpdateUser(RegisterModel registerModel);

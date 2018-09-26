@@ -35,9 +35,6 @@
                                 <a data-pill="#yk" href="/Society#yk">Yönetim Kurulu</a>
                             </li>
                             <li>
-                                <a data-pill="#ku" href="/Society#ku">Kurucu Üyeler</a>
-                            </li>
-                            <li>
                                 <a data-pill="#hak" href="/Society#hak">Hakkımızda</a>
                             </li>
                         </ul>
@@ -52,7 +49,17 @@
                         <a href="/Events">Duyurularımız</a>
                     </li>
                     <li>
-                        <a href="/Admin"><i class="fa fa-2x fa-sign-in"></i></a>
+
+                        @if (User.Identity.IsAuthenticated == true)
+                        {
+                            <a href="/Account/Logout"><i class="fa fa-2x fa-sign-out"></i></a>
+                        }
+                        else
+                        {
+                            <a href="/Admin"><i class="fa fa-2x fa-sign-in"></i></a>
+                        }
+
+
                     </li>
                 </ul>
             </nav>
@@ -76,9 +83,6 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/Society#yk">Yönetim Kurulu</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/Society#ku">Kurucu Üyeler</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/Society#tuzuk">Tüzük</a>
@@ -110,30 +114,31 @@
     <!-- Cotntact form -->
     <div id="contact" class="container">
         <form id="contactForm" class=" form mx-auto">
+            <div class="alert alert-succes"></div>
             <h4>İletişim Formu</h4>
             <div class="form-group row">
                 <div class="col-md-6">
-                    <label for="name">Adı Soyadı</label>
-                    <input type="text" class="form-control form-control-lg" id="name" name="SenderName" placeholder="Adınız Soyadınız">
+                    <label for="name">Adı Soyadı </label>
+                    <input type="text" class="form-control form-control-lg" id="name" name="SenderName" placeholder="Zorunlu alan" required>
                 </div>
                 <div class="col-md-6">
                     <label for="object">Konu</label>
-                    <input type="text" class="form-control form-control-lg " id="object" name="Object" placeholder="Konu">
+                    <input type="text" class="form-control form-control-lg " id="object" name="Object" placeholder="Zorunlu alan" required>
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-md-6">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control form-control-lg" id="email" name="Email" placeholder="Email adresiniz">
+                    <label for="contactemail">Email</label>
+                    <input type="email"  pattern="[a-z0-9._%+-]+@@[a-z0-9.-]+\.[a-z]{2,3}$" class="form-control form-control-lg" id="contactemail" name="Email" placeholder="Zorunlu alan" required>
                 </div>
                 <div class="col-md-6">
                     <label for="phone">Telefon Numaranız</label>
-                    <input type="tel" class="form-control form-control-lg" id="phone" name="Phone" placeholder="Telefon Numaranız">
+                    <input type="tel" class="form-control form-control-lg" id="phone" name="Phone" placeholder="Opsiyonel" >
                 </div>
             </div>
             <div class="form-group">
                 <label for="message">Mesaj</label>
-                <textarea class="form-control form-control-lg" id="message" name="Content" rows="5" placeholder="Mesajınız"></textarea>
+                <textarea class="form-control form-control-lg" id="message" name="Content" rows="5" placeholder="Zorunlu alan" required></textarea>
             </div>
             <input id="submit" type="button" class="btn btn-success" value="Gönder" />
         </form>
@@ -146,32 +151,32 @@
             <P>Anadolu ve Fen Lisesi Mezunları Derneği</P>
             <ul class="faico clear">
                 <li>
-                    <a class="faicon-facebook" href="http://www.os-templates.com/free-website-templates">
+                    <a class="faicon-facebook" href="https://www.facebook.com/AHG-A%C3%96L-ve-Fen-Lisesi-Mezunlar%C4%B1-Derne%C4%9Fi-150822592208596/" target="_blank">
                         <i class="fa fa-facebook"></i>
                     </a>
                 </li>
                 <li>
-                    <a class="faicon-twitter" href="http://www.os-templates.com/free-website-templates">
+                    <a class="faicon-twitter" href="https://www.instagram.com/ahgaolmd" target="_blank">
                         <i class="fa fa-instagram"></i>
                     </a>
                 </li>
                 <li>
-                    <a class="faicon-facebook" href="mailto:ahgaolmd@gmail.com">
+                    <a class="faicon-facebook" href="mailto:ahgaolmd@gmail.com" >
                         <i class="fa fa-envelope"></i>
                     </a>
                 </li>
                 <li>
-                    <a class="faicon-linkedin" href="tel:531-454-9962">
+                    <a class="faicon-linkedin" href="tel:05553066762">
                         <i class="fa fa-phone"></i>
                     </a>
                 </li>
                 <li>
-                    <a class="faicon-google-plus" href="http://www.os-templates.com/free-website-templates">
+                    <a class="faicon-google-plus" href="https://www.youtube.com/">
                         <i class="fa fa-youtube"></i>
                     </a>
                 </li>
                 <li>
-                    <a class="faicon-vk" href="http://www.os-templates.com/free-website-templates">
+                    <a class="faicon-vk" href="http://ahgfenlisesi.meb.k12.tr/">
                         <i class="fa fa-safari"></i>
                     </a>
                 </li>
@@ -183,10 +188,10 @@
     <a id="backtotop" href="#top">
         <i class="fa fa-chevron-up"></i>
     </a>
-    <a id="gotofacebook" href="#top">
+    <a id="gotofacebook" href="https://www.facebook.com/AHG-A%C3%96L-ve-Fen-Lisesi-Mezunlar%C4%B1-Derne%C4%9Fi-150822592208596/" target="_blank">
         <i class="fa fa-facebook"></i>
     </a>
-    <a id="gotoinstagram" href="#top">
+    <a id="gotoinstagram" href="https://www.instagram.com/ahgaolmd" target="_blank">
         <i class="fa fa-instagram"></i>
     </a>
 
@@ -201,7 +206,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-image"><img src="" height="auto" width="320px" /></div>
+                <div class="modal-image"><img src="" height="220px" width="320px" /></div>
                 <div class="modal-body">
                 </div>
                 <div class="modal-footer">
@@ -212,12 +217,11 @@
     </div>
     <script src="~/js/jquery.min.js"></script>
     <script src="~/js/jquery.backtotop.js"></script>
+    <script src="https://cdnjs.com/libraries/1000hz-bootstrap-validator"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
             crossorigin="anonymous"></script>
-    <script src="~/js/instafeed.min.js"></script>
     <script src="~/js/leftright.js"></script>
-    <script src="~/js/instagram.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.min.js"></script>
     <script>
         var scroll = new SmoothScroll('a[href*="#"]');
@@ -234,22 +238,22 @@
         function contactFormClean(){
             $('#name').val('');
             $('#object').val('');
-            $('#email').val('');
+            $('#contactemail').val('');
             $('#phone').val('');
             $('#message').val('');
 
         }
 
-        $('#submit').click(function (e) {
+        $('#submit').on('click',function (e) {
+            
             $.post('/Admin/AddContact', $('#contactForm').serialize(), function (returnVal) {
-                if (returnVal==1) {
+                if (returnVal == 1) {
                     contactFormClean();
                 } else {
-                    alert('Hata');
+                    alert('Lütfen zorunlu alanları doldurunuz.');
                 }
-                    
-                e.preventDefault();
-            })
+
+            });
         })
         
     </script>

@@ -76,9 +76,9 @@ namespace AhgMezunlar.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Content");
+                    b.Property<string>("ContactEmail");
 
-                    b.Property<string>("Email");
+                    b.Property<string>("Content");
 
                     b.Property<bool>("IsRead");
 

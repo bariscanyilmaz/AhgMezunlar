@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SliderImage>
+﻿@model IList<SliderImage>
 @{
     ViewData["Title"] = "Index";
 }
@@ -25,24 +25,13 @@
 
         </ol>
         <div class="carousel-inner">
-            @{ var index = 0;}
-            @foreach (var item in Model)
+
+            @for (int i = 0; i < Model.Count; i++)
             {
-                if (index == 0)
-                {
 
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="~/img/Slider/@item.Path" alt="@item.Path">
-                    </div>
-
-                    @(index++)
-                }
-                else
-                {
-                    <div class="carousel-item ">
-                        <img class="d-block w-100" src="~/img/Slider/@item.Path" alt="@item.Path">
-                    </div>
-                }
+                <div class="carousel-item @(i == 0?"active":"") ">
+                    <img class="d-block w-100" src="~/img/Slider/@Model[i].Path" alt="@Model[i].Path">
+                </div>
 
             }
         </div>
@@ -92,18 +81,7 @@ else
                         </footer>
                     </article>
                 </div>
-                <div class="table-cell">
-                    <article>
-                        <a href="/Society#ku">
-                            <i class="fa fa-plus"></i>
-                        </a>
-                        <h6 class="heading">Kurucu Üye</h6>
-                        <!-- <p>Lorem facilisis vel aliquam semper vestibulum iaculis etiam vel convallis porta&hellip;</p> -->
-                        <footer>
-                            <a href="/Society#ku">Git &raquo;</a>
-                        </footer>
-                    </article>
-                </div>
+               
                 <div class="table-cell">
                     <article>
                         <a href="/Society#tuzuk">
@@ -168,16 +146,16 @@ else
             </div>
         </div>
 
-        
+
         @await Component.InvokeAsync("Moments")
-        
+
     </section>
 </div>
 
 <!-- Sections-->
 @section scripts{
     <script>
-        $(document).ready(() => insta());
+
 
         $('#instafeed').on('click', 'img', function () {
             var link = $(this).data('link');
@@ -203,7 +181,7 @@ else
             var title = $(this).find('h6.heading').text();
             var image = $(this).data('image');
 
-            $('.modal img').attr('src',image);
+            $('.modal img').attr('src', image);
             $('.modal .modal-body').text(content);
             $('.modal .modal-title').text(title);
 
@@ -214,22 +192,27 @@ else
         //document ready popup
         $(document).ready(function () {
 
-            $("ul.events:has(li)").parent().addClass('hasList');
-            if ($('ul.events').hasClass('hasList')) {
-                var content = $('.popup').find('p').text();
-                var title = $('.popup').find('h6.heading').text();
-                var image = $('.popup').data('image');
-
-                $('.modal img').attr('src', image);
-                $('.modal .modal-body').text(content);
-                $('.modal .modal-title').text(title);
-                $('.modal').modal();
-
-            }
+            //
 
 
-           
 
+            $('ul.events').children().each(function () {
+                if ($(this).hasClass('popup')) {
+
+                    let popup = $('.one_third.popup');
+
+                    var content = popup.find('p').text();
+                    var title = popup.find('h6.heading').text();
+                    var image = popup.data('image');
+
+                    $('.modal img').attr('src', image);
+                    $('.modal .modal-body').text(content);
+                    $('.modal .modal-title').text(title);
+                    $('.modal.fade').modal();
+
+                }
+
+            });
             //
             $("#myCarousel").carousel();
 
@@ -249,5 +232,7 @@ else
 
 
     </script>
+    <script src="~/js/instafeed.min.js"></script>
+    <script src="~/js/instagram.js"></script>
 }
 

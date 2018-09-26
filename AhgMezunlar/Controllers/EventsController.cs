@@ -18,7 +18,7 @@ namespace AhgMezunlar.Controllers
 
         public IActionResult Index()
         {
-            return View(eventsRepository.GetEvents());
+            return View(eventsRepository.GetEvents().ToList());
         }
     }
 }

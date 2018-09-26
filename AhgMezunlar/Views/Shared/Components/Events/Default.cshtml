@@ -11,7 +11,7 @@
                     <i class="fa @Model[i].IconName"></i>
                 </a>
                 <h6 class="heading">@Model[i].Title</h6>
-                <p>@Model[i].Content</p>
+                <p>@Html.Raw(Model[i].Content)</p>
                 <footer>
                     <a class="btn">Görüntüle &raquo;</a>
                 </footer>

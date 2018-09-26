@@ -29,7 +29,7 @@ namespace AhgMezunlar.Models.Concrete
 
         public void AddUser(RegisterModel registerModel)
         {
-            
+
         }
 
         public void DeleteUser(string email)
@@ -39,12 +39,26 @@ namespace AhgMezunlar.Models.Concrete
 
         public ApplicationUser GetUser(string email)
         {
-            return null;
+            return userManager.Users.SingleOrDefault();
         }
 
-        public IQueryable<ApplicationUser> GetUsers()
+        public async Task<List<UserInfoModel>> GetUsers()
         {
-            return null;
+            List<UserInfoModel> userInfoModels = new List<UserInfoModel>();
+
+            var users = userManager.Users;
+
+            foreach (var item in users)
+            {
+                var userInfo = new UserInfoModel();
+                userInfo.Id = item.Id;
+                userInfo.Email = item.Email;
+                var rols = await userManager.GetRolesAsync(item);
+                userInfo.Role = rols.SingleOrDefault();
+                userInfoModels.Add(userInfo); 
+            }
+
+            return userInfoModels;
         }
 
         public void SaveUser(RegisterModel registerModel)
@@ -54,7 +68,8 @@ namespace AhgMezunlar.Models.Concrete
         
         public void UpdateUser(RegisterModel registerModel)
         {
-                
+            
         }
+
     }
 }

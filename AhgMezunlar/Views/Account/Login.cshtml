@@ -1,0 +1,30 @@
+﻿@model AhgMezunlar.Models.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container">
+
+    <form id="loginForm" asp-controller="Account" asp-action="Login" method="post">
+        @if (Model.Email != null)
+        {
+            <div class="col-md-6">
+                <div class="alert alert-success" asp-validation-summary="All"></div>
+            </div>
+        }
+
+        <div class="col-md-6">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control" />
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="Password"></label>
+            <input asp-for="Password" class="form-control" type="password" />
+        </div>
+        <div class="col-md-6">
+            <input type="submit" class="btn btn-primary" value="Giriş Yap" />
+        </div>
+    </form>
+
+</div>

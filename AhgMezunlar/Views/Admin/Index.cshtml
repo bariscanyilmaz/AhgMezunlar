@@ -97,44 +97,7 @@
                     <th><i data-toggle="tooltip" title="Görüntülemek için göz ikonuna tıklayabilirsiniz" class="fa fa-question-circle-o fa-2x"></i></th>
                 </tr>
             </thead>
-            <tbody>
-                <tr data-id="1" data-showOnPage="true" data-icon="fa-list">
-                    <td>1</td>
-                    <td><input type="radio" name="radio" checked class="popUpCheck"></td>
-                    <td><input type="checkbox" checked /></td>
-                    <td class="event-title" data-image="/img/Defaults/320x220.png">Geleneksel Pilav Günü</td>
-                    <td class="event-content">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
-                    <td>
-                        <div class="btn btn-success"><i class="fa fa-edit"></i></div>
-                        <div class="btn btn-danger"><i class="fa fa-trash"></i></div>
-                        <div class="btn btn-primary"><i class="fa fa-eye"></i></div>
-                    </td>
-                </tr>
-                <tr data-id="2" data-showOnPage="true" data-icon="fa-list">
-                    <td>2</td>
-                    <td><input type="radio" name="radio" class="popUpCheck"></td>
-                    <td><input type="checkbox" checked /></td>
-                    <td class="event-title">Geleneksel Pilav Günü</td>
-                    <td class="event-content" data-image="/img/Defaults/320x220.png">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
-                    <td>
-                        <div class="btn btn-success"><i class="fa fa-edit"></i></div>
-                        <div class="btn btn-danger"><i class="fa fa-trash"></i></div>
-                        <div class="btn btn-primary"><i class="fa fa-eye"></i></div>
-                    </td>
-                </tr>
-                <tr data-id="3" data-showOnPage="true" data-icon="fa-list">
-                    <td>3</td>
-                    <td><input type="radio" name="radio" class=" popUpCheck"></td>
-                    <td><input type="checkbox" checked /></td>
-                    <td class="event-title" data-image="/img/Defaults/320x220.png">Geleneksel Pilav Günü</td>
-                    <td class="event-content" data-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex corporis saepe mollitia nesciunt! A pariatur doloribus beatae, illo similique, alias dolorem accusantium obcaecati asperiores ipsam distinctio earum blanditiis, harum maiores?">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
-                    <td>
-                        <div class="btn btn-success"><i class="fa fa-edit"></i></div>
-                        <div class="btn btn-danger"><i class="fa fa-trash"></i></div>
-                        <div class="btn btn-primary"><i class="fa fa-eye"></i></div>
-                    </td>
-                </tr>
-            </tbody>
+            <tbody></tbody>
         </table>
         <br />
         <div class="alert text-center alert-secondary">Önceden Yayınlanmışlar</div>
@@ -149,47 +112,21 @@
                     <th><i data-toggle="tooltip" title="Görüntülemek için göz ikonlarına tıklayabilirsiniz" class="fa fa-question-circle-o fa-2x"></i></th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td><input type="checkbox" /></td>
-                    <td class="event-title" data-image="/img/Defaults/320x220.png">Geleneksel Pilav Günü</td>
-                    <td class="event-content">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
-                    <td>
-                        <div class="btn btn-success"><i class="fa fa-edit"></i></div>
-                        <div class="btn btn-danger"><i class="fa fa-trash"></i></div>
-                        <div class="btn btn-primary"><i class="fa fa-eye"></i></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td><input type="checkbox" /></td>
-                    <td class="event-title" data-image="/img/Defaults/320x220.png">Geleneksel Pilav Günü</td>
-                    <td class="event-content">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
-                    <td>
-                        <div class="btn btn-success"><i class="fa fa-edit"></i></div>
-                        <div class="btn btn-danger"><i class="fa fa-trash"></i></div>
-                        <div class="btn btn-primary"><i class="fa fa-eye"></i></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td><input type="checkbox" /></td>
-                    <td class="event-title" data-image="/img/Defaults/320x220.png">Geleneksel Pilav Günü</td>
-                    <td class="event-content">Her yıl düzenlenen Geleneksel pilav günümüze tüm mezun ve veliler davetlidir.</td>
-                    <td>
-                        <div class="btn btn-success"><i class="fa fa-edit"></i></div>
-                        <div class="btn btn-danger"><i class="fa fa-trash"></i></div>
-                        <div class="btn btn-primary"><i class="fa fa-eye"></i></div>
-                    </td>
-                </tr>
-            </tbody>
+            <tbody></tbody>
         </table>
         <br />
         <div class="text-center alert alert-info">Etkinlik ekleyin veya düzenleyin</div>
         <!-- Event Form -->
-        <form method="post" id="EventsForm" enctype="multipart/form-data" class="events-panel mx-auto">
+        <form id="EventsForm" enctype="multipart/form-data" class="events-panel mx-auto">
+
+            <!--Id-->
             <input id="eventId" name="Id" type="hidden" value="0" />
+
+            <!--Show on page  -->
+            <input type="hidden" id="ShowOnPage" name="ShowOnPage" value="false" />
+
+            <input type="hidden" id="PopupState" name="PopupState" value="false" />
+
             <div class="form-group">
                 <label for="icon">İkon </label>
                 <select id="icon" name="IconName" class="custom-select custom-select-lg">
@@ -630,21 +567,25 @@
                     <option value="fa-tags">&#xf02c; fa-tags</option>
                 </select>
             </div>
+
             <div class="form-group">
                 <label for="title">Başlık</label>
                 <input type="text" name="title" id="title" class="form-control">
             </div>
+
             <div class="form-group">
-                <label for="Image">Kapak Fotoğrafı</label>
-                <input type="file" name="image" id="Image" class="form-control-file">
+                <label for="file">Kapak Fotoğrafı</label>
+                <img src="" alt="" id="imagePhoto" />
+                <input type="file" name="file" id="file" class="form-control-file">
             </div>
-            <!--Show on page  -->
-            <input type="hidden" name="ShowOnPage" value="false" />
+
             <div class="form-group ">
                 <label for="content">Duyuru Metni</label>
                 <textarea cols="40" rows="10" name="content" id="content"></textarea>
             </div>
+
             <input type="button" value="Kaydet" class="btn btn-primary">
+
         </form>
     </div>
     <hr>
@@ -679,43 +620,12 @@
                                 <th class="w-10"><i data-toggle="tooltip" title="Görüntülemek için göz ikonlarına tıklayabilirsiniz" class="fa fa-question-circle-o fa-2x"></i></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <input checked type="checkbox" value="true">
-                                </td>
-                                <td class="contact-sender">Barış Can Yılmaz</td>
-                                <td class="contact-from">baris@bariscanyilmaz.com</td>
-                                <td class="contact-phone">053131232131</td>
-                                <td class="contact-object" data-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex corporis saepe mollitia nesciunt! A pariatur doloribus beatae, illo similique, alias dolorem accusantium obcaecati asperiores ipsam distinctio earum blanditiis, harum maiores?">Pilav Günü Ulaşım</td>
-                                <td class="text-center">
-                                    <div class="btn btn-sm btn-success">
-                                        <i class="fa fa-trash"></i>
-                                    </div>
-                                    <div class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" value="false">
-                                </td>
-                                <td class="contact-sender">Fehmi Yılmaz</td>
-                                <td class="contact-from">fehmi@fehmiyilmaz.com</td>
-                                <td class="contact-phone">053131232111</td>
-                                <td class="contact-object" data-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex corporis saepe mollitia nesciunt! A pariatur doloribus beatae, illo similique, alias dolorem accusantium obcaecati asperiores ipsam distinctio earum blanditiis, harum maiores?">Aşure Günü Ulaşım</td>
-                                <td class="text-center">
-                                    <div class="btn btn-sm btn-success">
-                                        <i class="fa fa-trash"></i>
-                                    </div>
-                                    <div class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></div>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tbody></tbody>
                     </table>
                 </div>
             </div>
-            <!--Okunmayanlar-->
 
+            <!--Okunmayanlar-->
             <div class="tab-pane " id="pills-unread" role="tabpanel" aria-labelledby="pills-unread-tab">
                 <div class="table-responsive">
                     <table class="unreadTable table table-sm mb-0 table-hover">
@@ -729,29 +639,12 @@
                                 <th class="w-10"><i data-toggle="tooltip" title="Görüntülemek için göz ikonlarına tıklayabilirsiniz" class="fa fa-question-circle-o fa-2x"></i></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" value="false">
-                                </td>
-                                <td class="contact-sender">Barış Can Yılmaz</td>
-                                <td class="contact-from">baris@bariscanyilmaz.com</td>
-                                <td class="contact-phone">053131232131</td>
-                                <td class="contact-object" data-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex corporis saepe mollitia nesciunt! A pariatur doloribus beatae, illo similique, alias dolorem accusantium obcaecati asperiores ipsam distinctio earum blanditiis, harum maiores?">Pilav Günü Ulaşım</td>
-                                <td class="text-center">
-
-                                    <div class="btn btn-sm btn-success">
-                                        <i class="fa fa-trash"></i>
-                                    </div>
-                                    <div class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></div>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tbody></tbody>
                     </table>
                 </div>
             </div>
-            <!--Okunanlar-->
 
+            <!--Okunanlar-->
             <div class="tab-pane" id="pills-read" role="tabpanel" aria-labelledby="pills-read-tab">
                 <div class="table-responsive">
                     <table class="readTable table table-sm mb-0 table-hover">
@@ -765,22 +658,7 @@
                                 <th class="w-10"><i data-toggle="tooltip" title="Görüntülemek için göz ikonlarına tıklayabilirsiniz" class="fa fa-question-circle-o fa-2x"></i></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <input checked type="checkbox" value="true">
-                                </td>
-                                <td class="contact-sender">Barış Can Yılmaz</td>
-                                <td class="contact-from">baris@bariscanyilmaz.com</td>
-                                <td class="contact-phone">053131232131</td>
-                                <td class="contact-object" data-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex corporis saepe mollitia nesciunt! A pariatur doloribus beatae, illo similique, alias dolorem accusantium obcaecati asperiores ipsam distinctio earum blanditiis, harum maiores?">Pilav Günü Ulaşım</td>
-                                <td class="text-center">
-
-                                    <div class="btn btn-sm btn-success"><i class="fa fa-trash"></i></div>
-                                    <div class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></div>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tbody></tbody>
                     </table>
                 </div>
             </div>
@@ -790,349 +668,682 @@
 
 <!-- Sections-->
 @section scripts{
-<script src="https://cdn.ckeditor.com/4.9.2/basic/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace('content');
-</script>
-<script>
+    <script src="https://cdn.ckeditor.com/4.9.2/basic/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('content');
+    </script>
+    <script>
 
-    //Slider functions
-    function GetSliderImages() {
-        $.get('/Admin/GetSliderImages', function (sliderImages) {
-            $.each(sliderImages, function (indis, sliderImage) {
-                $("#sliderTable tbody").append(`<tr><td>${indis + 1}</td><td>${sliderImage.path}</td><td><div data-id="${sliderImage.id}" class="btn btn-sm btn-danger">Kaldır</div></td></tr>`);
+        //Slider functions
+        function GetSliderImages() {
+            $.get('/Admin/GetSliderImages', function (sliderImages) {
+                $.each(sliderImages, function (indis, sliderImage) {
+                    $("#sliderTable tbody").append(`<tr><td>${indis + 1}</td><td>${sliderImage.path}</td><td><div data-id="${sliderImage.id}" class="btn btn-sm btn-danger">Kaldır</div></td></tr>`);
+                });
             });
-        });
-    }
-
-    function AddSliderImage() {
-        let fileUpload = $('#sliderImage').get(0);
-        let files = fileUpload.files;
-        let data = new FormData();
-        for (var i = 0; i < files.length; i++) {
-            data.append(files[i].name, files[i]);
         }
 
-        $.ajax({
-            type: "POST",
-            url: "/Admin/AddSliderImage",
-            contentType: false,
-            processData: false,
-            data: data
-        }).done(function (value) {
-            $("#sliderTable tbody tr").remove();
-            GetSliderImages();
-        })
-
-        
-    }
-
-
-    //Moments Functions
-    function GetMoments() {
-        $.get('/Admin/GetMoments', function (momentsList) {
-            $.each(momentsList, function (indis, moment) {
-                $('.momentsTable tbody').append(`<tr>
-                    <td>${indis + 1}</td>
-                    <td data-image="/img/Moments/${moment.coverPhotoPath}" data-content="${moment.content}">${moment.title}</td>
-                    <td >${moment.senderName}</td>
-                    <td>
-                        <input type="checkbox" ${moment.showState == true ? "checked" : " "} name="checkbox" data-id=${moment.id} class="showMoment" />
-                    </td>
-                    <td>
-                        <div data-id=${moment.id} class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></div>
-                        <div class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></div>
-                    </td>
-                </tr>`)
-            })
-        })
-    };
-
-
-    //Sayfa yüklendiğinde yapılacaklar
-    $(document).ready(function (e) {
-        GetSliderImages();
-        GetMoments();
-
-
-        e.preventDefault();
-        e.stopImmediatePropagation();
-
-    })
-
-
-    //slider işlemleri
-    $(function () {
-        //Add Slider Image
-        $('#homePageSliderForm').on('click', '.btn-primary', function (e) {
-            AddSliderImage();
-
-            e.preventDefault();
-            e.stopImmediatePropagation();
-        });
-
-        //Delete Slider Image
-        $('#sliderTable').on('click', ' .btn-danger', function (e) {
-            let id = $(this).data('id');
-            let row = $(this).parent().parent();
-            $.post("/Admin/DeleteSliderImage", { Id: id }, function (data) {
-                if (data == 1) {
-                    row.remove();
-                }    
-            });
-
-            e.preventDefault();
-            e.stopImmediatePropagation();
-        });
-
-    });
-
-
-    
-
-
-    //Events İşlemleri
-    $(function () {
-        //save-events
-        $("#EventsForm .btn").click(function () {
-
-            let iconName = $("#icon").val();
-            let title = $("#title").val();
-            let showonPage = document.getElementById("ShowOnPage").checked;
-            let content = CKEDITOR.instances['content'].getData();
-            let Id = $("#eventId").val();
-
-            let form = $("#EventsForm");
-            let data = new FormData(form[0]);
-
-            data.set($("#ShowOnPage").attr("name"), showonPage);
-            data.set($("#content").attr("name"), content);
-
-            $.ajax({
-
-                type: "POST",
-                url: "/Admin/AddOrUpdateEvents",
-                contentType: false,
-                processData: false,
-                data: data,
-                succes: function (returnVal) {
-                    console.log(returnVal);
-                },
-
-                error: function () {
-                    console.log('hata');
-                }
-
-            });
-
-            $('#EventsForm')[0].reset();
-            CKEDITOR.instances['content'].setData('');
-        });
-
-        //delete-events
-        $(".eventsManageTable .btn-danger").click(function () {
-            alert('click')
-            $.post("/Admin/DeleteEvents", $(this).parent().parent().data('id'), function (data) {
-
-                console.log(data);
-            });
-
-            //update table
-        });
-
-        //update popup events
-        $(".eventsManageTable .popUpCheck").click(function () {
-            let id = $(this).parent().parent().parent().data('id');
-            let state = $(this).prop('checked');
-            $.post("/Admin/UpdatePopUp", { Id: id, State: state }, function (data) {
-                console.log(data);
-            });
-
-
-        });
-
-        //edit events
-        $(".eventsManageTable .btn-success").click(function () {
-            let row = $(this).parent().parent();
-
-            let id = row.data('id');
-            let title = row.find('.event-title').val();
-            let content = row.find('.event-content').data('content');
-            let showOnPage = row.data('data-showOnPage');
-            let image = row.find('.event-title').data('image');
-            let popUp = row.find('.popUpCheck').prop('checked');
-            let iconName = row.data('icon');
-
-
-            $.post('/Admin/AddOrUpdateEvents', { Id: id, Title: title, ShowOnPage: showOnPage, Content: content, PhotoPath: image, IconName: iconName, PopupState: popUp }, function (data) {
-                console.log(data);
-            })
-
-            //update table
-
-        });
-
-        //See Event
-        $('.eventsManageTable .btn-primary').click(function () {
-            let row = $(this).parent().parent();
-
-
-        })
-
-    });
-
-
-    //Moments managment
-    $(function () {
-
-        //moment show
-        $('.momentsTable .btn-primary').click(function () {
-            let row = $(this).parent().parent();
-
-            let td2 = row.find('td:nth-child(2)');
-            let image = td2.data('image');
-            let content = td2.data('content');
-            let title = td2.text();
-
-            $('.modal img').attr('src', image);
-            $('.modal .modal-body').text(content);
-            $('.modal .modal-title').text(title);
-            $('.modal').modal();
-        });
-
-
-        //delete moment
-        $('.momentsTable .btn-danger').click(function () {
-            let id = $(this).data('id');
-            let row = $(this).parent().parent();
-            $.post('/Admin/DeleteMoment', "Id=" + id, function (returnVal) {
-                if (returnVal == 1) {
-                    row.remove();
-                }
-            })
-        });
-
-        $('.momentsTable').on('change', '.showMoment', function () {
-
-            let id = $(this).data('id');
-            let showState = $(this).prop('checked');
-
-            console.log(id);
-            console.log(showState);
-
-            $.post('/Admin/UpdateMoment', 'Id=' + id + '&showState=' + showState, function (returnVal) {
-                console.log(returnVal);
-            });
-
-
-        });
-
-        //events managment table click
-        //$('.eventsManageTable tr').click(function () {
-
-        //    let title = $(this).find('.event-title').text();
-        //    let content = $(this).find('.event-content').text();
-        //    let image = $(this).find('.event-title').data('image');
-
-        //    $('.modal img').attr('src', image);
-        //    $('.modal .modal-body').text(content);
-        //    $('.modal .modal-title').text(title);
-        //    $('.modal').modal();
-
-        //})
-
-        //Old evetns table click
-        //$('.oldEventsTable tr').click(function () {
-        //    let title = $(this).find('.event-title').text();
-        //    let content = $(this).find('.event-content').text();
-        //    let image = $(this).find('.event-title').data('image');
-
-        //    $('.modal img').attr('src', image);
-        //    $('.modal .modal-body').text(content);
-        //    $('.modal .modal-title').text(title);
-        //    $('.modal').modal();
-
-        //})
-    });
-
-
-    //accordion panel
-    $(function () {
-
-        var accordion = document.getElementsByClassName("accordion");
-        var i;
-        for (i = 0; i < accordion.length; i++) {
-            accordion[i].addEventListener('click', function () {
-                this.classList.toggle('active');
-
-                var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                    panel.classList.toggle('m-3');
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + 'px';
-                    panel.classList.toggle('m-3');
-                }
-
-            });
-
-        }
-
-        var navLinks = document.getElementsByClassName('nav-link');
-        var tabContentList = document.getElementsByClassName('tab-pane');
-
-        $('.nav-item a').click(function () {
-            var targetId = $(this).data('pill').replace('#', '');
-            openTab(targetId);
-        })
-
-        function openTab(tabpaneid) {
-            for (let i = 0; i < tabContentList.length; i++) {
-                tabContentList[i].style.display = 'none';
+        function AddSliderImage() {
+            let fileUpload = $('#sliderImage').get(0);
+            let files = fileUpload.files;
+            let data = new FormData();
+            for (var i = 0; i < files.length; i++) {
+                data.append(files[i].name, files[i]);
             }
 
-            element = document.getElementById(tabpaneid);
-            element.style.display = 'flex';
+            $.ajax({
+                type: "POST",
+                url: "/Admin/AddSliderImage",
+                contentType: false,
+                processData: false,
+                data: data
+            }).done(function (value) {
+                $("#sliderTable tbody tr").remove();
+                GetSliderImages();
+            });
+
+
         }
 
-        //İnbox panel
-        //inboxTable
-        $('.inboxTable tr').click(function () {
-            let sender = $(this).find('td.contact-sender').text();
-            let object = $(this).find('td.contact-object').text();
-            let content = $(this).find('.contact-object').data('content');
 
-            $('.modal .modal-body').text(content);
-            $('.modal .modal-title').text(object)
-            $('.modal').modal();
+        //Moments Functions
+        function GetMoments() {
+            $.get('/Admin/GetMoments', function (momentsList) {
+                if (momentsList.length > 0) {
+                    $('.momentsTable tbody tr').remove();
+                    $.each(momentsList, function (indis, moment) {
+                        $('.momentsTable tbody').append(`<tr>
+                                    <td>${indis + 1}</td>
+                                    <td data-image="/img/Moments/${moment.coverPhotoPath}" data-content="${moment.content}">${moment.title}</td>
+                                    <td >${moment.senderName}</td>
+                                    <td>
+                                        <input type="checkbox" ${moment.showState == true ? "checked" : " "} name="checkbox" data-id=${moment.id} class="showMoment" />
+                                    </td>
+                                    <td>
+                                        <div data-id=${moment.id} class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></div>
+                                        <div class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></div>
+                                    </td>
+                                </tr>`)
+                    })
+                }
+
+            })
+        };
+
+        //Events Functions
+        function GetOldEvents() {
+            $.get('/Admin/GetOldEvents', function (oldEvents) {
+                $('.oldEventsTable tbody tr').remove();
+                if (oldEvents.length > 0) {
+                    $.each(oldEvents, function (index, event) {
+                        $('.oldEventsTable tbody').append(`<tr data-id="${event.id}" class="oldEvent"  data-icon="${event.iconName}" >
+                                <td>${index += 1}</td>
+                                <td><input type="checkbox" class="showOnPage" /></td>
+                                <td class="event-title" data-image="/img/Events/${event.photoPath}">${event.title}</td>
+                                <td class="event-content" data-content="${event.content}">${event.content}</td>
+                                <td>
+                                    <div class="btn btn-success"><i class="fa fa-edit"></i></div>
+                                    <div class="btn btn-danger"><i class="fa fa-trash"></i></div>
+                                    <div class="btn btn-primary"><i class="fa fa-eye"></i></div>
+                                </td>
+                            </tr>`)
+                    })
+                }
+            });
+        }
+
+        function GetShowingEvents() {
+            $.get('/Admin/GetShowingEvents', function (showingEvents) {
+                $('.eventsManageTable tbody tr').remove();
+                if (showingEvents.length > 0) {
+                    $.each(showingEvents, function (index, event) {
+                        $('.eventsManageTable tbody').append(`<tr data-id="${event.id}" class="showingEvent"  data-icon="${event.iconName}" >
+                                <td>${index += 1}</td>
+                                <td><input type="radio" name="radio"  ${event.popupState == true ? "checked" : " "} class="popUpState"></td>
+                                <td><input type="checkbox" class="showOnPage" checked /></td>
+                                <td class="event-title" data-image="/img/Events/${event.photoPath}">${event.title}</td>
+                                <td class="event-content" data-content="${event.content}">${event.content}</td>
+                                <td>
+                                    <div class="btn btn-success"><i class="fa fa-edit"></i></div>
+                                    <div class="btn btn-danger"><i class="fa fa-trash"></i></div>
+                                    <div class="btn btn-primary"><i class="fa fa-eye"></i></div>
+                                </td>
+                            </tr>`)
+                    });
+                }
+            });
+           
+        }
+
+        
+
+        //inbox functions
+
+        //inbox
+        function GetAllContactMessages() {
+            $.get('/Admin/GetAllContactMessages', function (data) {
+                $('.inboxTable tbody tr').remove();
+                $.each(data, function (indis, val) {
+                    $('.inboxTable tbody').append(`<tr>
+                                                <td>
+                                                    <input class="isread" data-id="${val.id}" ${val.isRead == true ? "checked" : " "} type="checkbox">
+                                                </td>
+                                                <td class="contact-sender">${val.senderName}</td>
+                                                <td class="contact-from">${val.contactEmail}</td>
+                                                <td class="contact-phone">${val.phone}</td>
+                                                <td class="contact-object" data-content="${val.content}">${val.object}</td>
+                                                <td class="text-center">
+                                                    <div data-id="${val.id}" class="btn btn-sm btn-success">
+                                                        <i class="fa fa-trash"></i>
+                                                    </div>
+                                                    <div data-id="${val.id}" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></div>
+                                                </td>
+                                            </tr>`);
+                });
+            })
+        }
+
+        //unread
+        function GetUnreadContactMessages() {
+            $.get('/Admin/GetUnreadMessages', function (data) {
+                $('.unreadTable  tbody tr').remove();
+                $.each(data, function (indis, val) {
+                    $('.unreadTable tbody').append(`<tr>
+                                                <td>
+                                                    <input class="isread" data-id="${val.id}" ${val.isRead == true ? "checked" : " "} type="checkbox">
+                                                </td>
+                                                <td class="contact-sender">${val.senderName}</td>
+                                                <td class="contact-from">${val.contactEmail}</td>
+                                                <td class="contact-phone">${val.phone}</td>
+                                                <td class="contact-object" data-content="${val.content}">${val.object}</td>
+                                                <td class="text-center">
+                                                    <div data-id="${val.id}" class="btn btn-sm btn-success">
+                                                        <i class="fa fa-trash"></i>
+                                                    </div>
+                                                    <div data-id="${val.id}" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></div>
+                                                </td>
+                                            </tr>`)
+                })
+            })
+        }
+
+        //read
+        function GetReadContactMessages() {
+            $.get('/Admin/GetReadMessages', function (data) {
+                $('.readTable  tbody tr').remove();
+                $.each(data, function (indis, val) {
+                    $('.readTable tbody').append(`<tr>
+                                                <td>
+                                                    <input class="isread" data-id="${val.id}" ${val.isRead == true ? "checked" : " "} type="checkbox">
+                                                </td>
+                                                <td class="contact-sender">${val.senderName}</td>
+                                                <td class="contact-from">${val.contactEmail}</td>
+                                                <td class="contact-phone">${val.phone}</td>
+                                                <td class="contact-object" data-content="${val.content}">${val.object}</td>
+                                                <td class="text-center">
+                                                    <div data-id="${val.id}" class="btn btn-sm btn-success">
+                                                        <i class="fa fa-trash"></i>
+                                                    </div>
+                                                    <div data-id="${val.id}" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></div>
+                                                </td>
+                                            </tr>`)
+                })
+            })
+        }
+
+        //Sayfa yüklendiğinde yapılacaklar
+        $(document).ready(function () {
+            GetSliderImages();
+            GetMoments();
+            GetAllContactMessages();
+            GetReadContactMessages();
+            GetUnreadContactMessages();
+            GetShowingEvents();
+            GetOldEvents();
 
         })
 
-        //unreadTable
-        $('.unreadTable tr').click(function () {
-            let sender = $(this).find('td.contact-sender').text();
-            let object = $(this).find('td.contact-object').text();
-            let content = $(this).find('.contact-object').data('content');
+        //slider işlemleri
+        $(function () {
+            //Add Slider Image
+            $('#homePageSliderForm').on('click', '.btn-primary', function (e) {
+                AddSliderImage();
 
-            $('.modal .modal-body').text(content);
-            $('.modal .modal-title').text(object)
-            $('.modal').modal();
+                e.preventDefault();
+                e.stopImmediatePropagation();
+            });
+
+            //Delete Slider Image
+            $('#sliderTable').on('click', ' .btn-danger', function (e) {
+                let id = $(this).data('id');
+                let row = $(this).parent().parent();
+                $.post("/Admin/DeleteSliderImage", { Id: id }, function (data) {
+                    if (data == 1) {
+                        row.remove();
+                    }
+                });
+
+                e.preventDefault();
+                e.stopImmediatePropagation();
+            });
 
         });
 
-        //readTable
-        $('.readTable tr').click(function () {
-            let sender = $(this).find('td.contact-sender').text();
-            let object = $(this).find('td.contact-object').text();
-            let content = $(this).find('.contact-object').data('content');
+        //Events İşlemleri
+        $(function () {
 
-            $('.modal .modal-body').text(content);
-            $('.modal .modal-title').text(object)
-            $('.modal').modal();
+            //save-events
+            $("#EventsForm").on('click', '.btn-primary', function () {
+
+                let content = CKEDITOR.instances['content'].getData();
+                let title = $('#title').val();
+                let eventId = $('#eventId').val();
+                let showOnPage = $('#ShowOnPage').val();
+                let popupState = $('#PopupState').val();
+                let iconName = $('#icon').val();
+
+                let files = $('#file').get(0).files
+                let data = new FormData();
+
+                for (var i = 0; i < files.length; i++) {
+                    data.append(files[i].name, files[i]);
+                }
+
+                data.append('content', content);
+                data.append('title', title);
+                data.append('id', eventId);
+                data.append('showOnPage', showOnPage);
+                data.append('popupState', popupState);
+                data.append('iconName', iconName);
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Admin/AddOrUpdateEvents",
+                    contentType: false,
+                    processData: false,
+                    data: data
+                }).done(function (returnVal) {
+                    if (returnVal == 1) {
+                        GetOldEvents();
+                        GetShowingEvents();
+                        $('#EventsForm')[0].reset();
+                        $('#imagePhoto').attr('src', '');
+                        CKEDITOR.instances['content'].setData('');
+
+                    }
+                });
+            });
+
+            //delete showing events
+            $(".eventsManageTable").on('click', '.btn-danger', function () {
+                let row = $(this).closest('tr');
+                let id = row.data('id');
+
+                $.post('/Admin/DeleteEvent', 'Id=' + id, function (returnVal) {
+                    if (returnVal == 1) {
+                        row.remove();
+                    }
+                });
+            });
+
+            //delete old events
+            $('.oldEventsTable').on('click', '.btn-danger', function () {
+                let row = $(this).closest('tr');
+                let id = row.data('id');
+
+                $.post('/Admin/DeleteEvent', 'Id=' + id, function (returnVal) {
+                    if (returnVal == 1) {
+                        row.remove();
+                    }
+                });
+            });
+
+            //update show on page in old events table
+            $('.oldEventsTable ').on('change', '.showOnPage', function () {
+                let count = document.getElementsByClassName('showingEvent').length;
+
+                if (count >= 3) {
+                    $(this).prop('checked', false);
+                } else {
+                    let row = $(this).closest('tr');
+                    let id = row.data('id');
+                    let showOnPage = $(this).prop('checked');
+
+                    $.post('/Admin/UpdateEventShowOnPageState', 'id=' + id + '&showOnPage=' + showOnPage, function (returnVal) {
+                        if (returnVal == 1) {
+                            row.remove();
+                            GetShowingEvents();
+                        }
+                    });
+                }
+                
+            });
+
+            //update show on page in showing events table
+            $('.eventsManageTable').on('change', '.showOnPage', function () {
+                let row = $(this).closest('tr');
+                let id = row.data('id');
+                let showOnPage = $(this).prop('checked');
+
+                $.post('/Admin/UpdateEventShowOnPageState', 'id=' + id + '&showOnPage=' + showOnPage, function (returnVal) {
+                    if (returnVal == 1) {
+                        row.remove();
+                        GetOldEvents();
+                    }
+                });
+            });
+
+
+            //update popup events
+
+            $(".eventsManageTable").on('change', '.popUpState', function () {
+                let id = $(this).closest('tr').data('id');
+                let state = $(this).prop('checked');
+
+                $.post("/Admin/UpdatePopUp", { Id: id, State: state }, function (data) {
+                    if (data != 1) {
+                        alert('Ufak bir hata oluştu lütfen daha sonra bir daha deneyiniz');
+                    }
+                });
+
+
+            });
+
+
+
+            //edit events
+            $(".eventsManageTable").on('click', '.btn-success', function () {
+                //ana sayfada gösterilen eventlar
+                let row = $(this).closest('tr');
+
+                let id = row.data('id');
+                let title = row.find('.event-title').text();
+                let content = row.find('.event-content').data('content');
+                let showOnPage = true
+                let image = row.find('.event-title').data('image');
+                let popUpState = row.find('.popUpState').prop('checked') ? true : false;
+                let iconName = row.data('icon');
+
+                console.log(title);
+
+                $('#EventsForm  #eventId').val(id);
+                CKEDITOR.instances['content'].setData(content);
+                $('#EventsForm  #title').val(title);
+                $('#EventsForm  #ShowOnPage').val(true);
+                $('#EventsForm  #PopupState').val(popUpState);
+                $('#EventsForm  #icon').val(iconName);
+                //image set
+                $('#EventsForm  #imagePhoto').attr('src', image);
+
+
+
+            });
+
+            //Od events edit
+            $(".oldEventsTable").on('click', '.btn-success', function () {
+                //ana sayfada gösterilmeyen eski eventlar
+                let row = $(this).closest('tr');
+
+                let id = row.data('id');
+                let title = row.find('.event-title').text();
+                let content = row.find('.event-content').data('content');
+                let showOnPage = false
+                let image = row.find('.event-title').data('image');
+                let popUpState = false;
+                let iconName = row.data('icon');
+
+                console.log(title);
+
+                $('#EventsForm  #eventId').val(id);
+                CKEDITOR.instances['content'].setData(content);
+                $('#EventsForm  #title').val(title);
+                $('#EventsForm  #ShowOnPage').val(false);
+                $('#EventsForm  #PopupState').val(false);
+                $('#EventsForm  #icon').val(iconName);
+                //image set
+                $('#EventsForm  #imagePhoto').attr('src', image);
+
+
+
+            });
+
+
+
+            //See showing Events
+            $('.eventsManageTable').on('click', '.btn-primary', function () {
+
+                let row = $(this).closest('tr');
+                let image = row.find('.event-title').data('image');
+                let content = row.find('.event-content').data('content');
+                let title = row.find('.event-title').text();
+
+
+                $('.modal img').attr('src', image);
+                $('.modal .modal-body').html(content);
+                $('.modal .modal-title').text(title);
+                $('.modal').modal();
+
+            });
+
+            //old events
+            $('.oldEventsTable').on('click', '.btn-primary', function () {
+
+                let row = $(this).closest('tr');
+                let image = row.find('.event-title').data('image');
+                let content = row.find('.event-content').data('content');
+                let title = row.find('.event-title').text();
+
+
+                $('.modal img').attr('src', image);
+                $('.modal .modal-body').html(content);
+                $('.modal .modal-title').text(title);
+                $('.modal').modal();
+
+            });
+
 
         });
 
-    });
+        //Moments managment
+        $(function () {
 
-</script>
+            //moment show
+            $('.momentsTable ').on('click', '.btn-primary', function () {
+                let row = $(this).parent().parent();
+
+                let td2 = row.find('td:nth-child(2)');
+                let image = td2.data('image');
+                let content = td2.data('content');
+                let title = td2.text();
+
+                $('.modal img').attr('src', image);
+                $('.modal .modal-body').html(content);
+                $('.modal .modal-title').text(title);
+                $('.modal').modal();
+            });
+
+
+            //delete moment
+            $('.momentsTable').on('click', '.btn-danger', function () {
+                let id = $(this).data('id');
+                let row = $(this).parent().parent();
+                $.post('/Admin/DeleteMoment', "Id=" + id, function (returnVal) {
+                    if (returnVal == 1) {
+                        row.remove();
+                    }
+                })
+            });
+
+            //update show state
+            $('.momentsTable').on('change', '.showMoment', function () {
+
+                let id = $(this).data('id');
+                let showState = $(this).prop('checked');
+
+                console.log(id);
+                console.log(showState);
+
+                $.post('/Admin/UpdateMoment', 'id=' + id + '&showState=' + showState, function (returnVal) {
+                    console.log(returnVal);
+                });
+
+
+            });
+
+            //events managment table click
+            //$('.eventsManageTable tr').click(function () {
+
+            //    let title = $(this).find('.event-title').text();
+            //    let content = $(this).find('.event-content').text();
+            //    let image = $(this).find('.event-title').data('image');
+
+            //    $('.modal img').attr('src', image);
+            //    $('.modal .modal-body').text(content);
+            //    $('.modal .modal-title').text(title);
+            //    $('.modal').modal();
+
+            //})
+
+            //Old evetns table click
+            //$('.oldEventsTable tr').click(function () {
+            //    let title = $(this).find('.event-title').text();
+            //    let content = $(this).find('.event-content').text();
+            //    let image = $(this).find('.event-title').data('image');
+
+            //    $('.modal img').attr('src', image);
+            //    $('.modal .modal-body').text(content);
+            //    $('.modal .modal-title').text(title);
+            //    $('.modal').modal();
+
+            //})
+        });
+
+
+        //accordion panel
+        $(function () {
+
+            var accordion = document.getElementsByClassName("accordion");
+            var i;
+            for (i = 0; i < accordion.length; i++) {
+                accordion[i].addEventListener('click', function () {
+                    this.classList.toggle('active');
+
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                        panel.classList.toggle('m-3');
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + 'px';
+                        panel.classList.toggle('m-3');
+                    }
+
+                });
+
+            }
+
+            var navLinks = document.getElementsByClassName('nav-link');
+            var tabContentList = document.getElementsByClassName('tab-pane');
+
+            $('.nav-item a').click(function () {
+                var targetId = $(this).data('pill').replace('#', '');
+                openTab(targetId);
+            })
+
+            function openTab(tabpaneid) {
+                for (let i = 0; i < tabContentList.length; i++) {
+                    tabContentList[i].style.display = 'none';
+                }
+
+                element = document.getElementById(tabpaneid);
+                element.style.display = 'flex';
+            }
+
+            //İnbox panel
+
+            //inboxTable
+            $('.inboxTable').on('click', '.btn-primary', function () {
+
+                let senderMail = $(this).closest('tr').find('.contact-from').text();
+                let object = $(this).closest('tr').find('.contact-object').text();
+                let content = $(this).closest('tr').find('.contact-object').data('content');
+
+                $('.modal .modal-body').text(content);
+                $('.modal .modal-title').text('Konu:' + object);
+                $('.modal .modal-footer').text(senderMail);
+                $('.modal').modal();
+
+            });
+
+            //unreadTable
+            $('.unreadTable').on('click', '.btn-primary', function () {
+                let senderMail = $(this).closest('tr').find('.contact-from').text();
+                let object = $(this).closest('tr').find('.contact-object').text();
+                let content = $(this).closest('tr').find('.contact-object').data('content');
+
+                $('.modal .modal-body').text(content);
+                $('.modal .modal-title').text('Konu:' + object);
+                $('.modal .modal-footer').text(senderMail);
+                $('.modal').modal();
+            });
+
+            //readTable
+            $('.readTable').on('click', '.btn-primary', function () {
+                let senderMail = $(this).closest('tr').find('.contact-from').text();
+                let object = $(this).closest('tr').find('.contact-object').text();
+                let content = $(this).closest('tr').find('.contact-object').data('content');
+
+                $('.modal .modal-body').text(content);
+                $('.modal .modal-title').text('Konu:' + object);
+                $('.modal .modal-footer').text(senderMail);
+                $('.modal').modal();
+            });
+
+            //table read change
+
+            $('.inboxTable').on('change', '.isread', function () {
+                let id = $(this).data('id');
+                let isRead = $(this).prop('checked');
+
+                $.post('/Admin/UpdateMessage', 'Id=' + id + '&isRead=' + isRead, function (returnVal) {
+                    if (returnVal == 1) {
+                        GetReadContactMessages();
+                        GetUnreadContactMessages();
+                    }
+                });
+
+            });
+
+            $('.unreadTable').on('change', '.isread', function () {
+                let id = $(this).data('id');
+                let isRead = $(this).prop('checked');
+                let row = $(this).closest('tr');
+                $.post('/Admin/UpdateMessage', 'Id=' + id + '&isRead=' + isRead, function (returnVal) {
+                    if (returnVal == 1) {
+                        row.remove();
+                        GetReadContactMessages();
+                        GetAllContactMessages();
+                    }
+                });
+
+            });
+
+            $('.readTable').on('change', '.isread', function () {
+                let id = $(this).data('id');
+                let isRead = $(this).prop('checked');
+                let row = $(this).closest('tr');
+                $.post('/Admin/UpdateMessage', 'Id=' + id + '&isRead=' + isRead, function (returnVal) {
+                    if (returnVal == 1) {
+                        row.remove();
+                        GetUnreadContactMessages();
+                        GetAllContactMessages();
+                    }
+                });
+
+            });
+
+            //table delete button
+
+            $('.inboxTable').on('click', '.btn-success', function () {
+                let id = $(this).data('id');
+                let row = $(this).closest('tr');
+                $.post('/Admin/DeleteMessage', 'Id=' + id, function (returnVal) {
+                    if (returnVal == 1) {
+                        row.remove();
+                        GetUnreadContactMessages();
+                        GetReadContactMessages();
+                    }
+                });
+            });
+
+            $('.readTable').on('click', '.btn-success', function () {
+                let id = $(this).data('id');
+                let row = $(this).closest('tr');
+                $.post('/Admin/DeleteMessage', 'Id=' + id, function (returnVal) {
+                    if (returnVal == 1) {
+                        row.remove();
+                        GetAllContactMessages();
+                        GetUnreadContactMessages();
+                    }
+                });
+            });
+
+            $('.unreadTable').on('click', '.btn-success', function () {
+                let id = $(this).data('id');
+                let row = $(this).closest('tr');
+                $.post('/Admin/DeleteMessage', 'Id=' + id, function (returnVal) {
+                    if (returnVal == 1) {
+                        row.remove();
+                        GetAllContactMessages();
+                        GetReadContactMessages();
+                    }
+                });
+            });
+
+
+        });
+
+
+
+
+    </script>
 }

@@ -31,7 +31,13 @@ namespace AhgMezunlar
         {
 
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>(options=> 
+            {
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireDigit = false;
+            })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
             services.AddTransient<IAccountRepository, AccountRepository>();
@@ -68,6 +74,12 @@ namespace AhgMezunlar
         private static async Task EnsureRoleAsync(RoleManager<IdentityRole> roleManager)
         {
             var alreadyExists = await roleManager.RoleExistsAsync("Admin");
+            var userRole = await roleManager.RoleExistsAsync("User");
+
+            if (userRole) return;
+
+            await roleManager.CreateAsync(new IdentityRole("User"));
+
 
             if (alreadyExists) return;
 
@@ -77,14 +89,14 @@ namespace AhgMezunlar
 
         private static async Task EnsureTestAdminAsync(UserManager<ApplicationUser> userManager)
         {
-            var testAdmin = await userManager.Users.Where(x => x.UserName == "ylmazbarscan@gmail.com").SingleOrDefaultAsync();
+            var testAdmin = await userManager.Users.Where(x => x.UserName == "admin@ahgmezunlari.org").SingleOrDefaultAsync();
 
             if (testAdmin != null) return;
 
-            testAdmin = new ApplicationUser { UserName = "ylmazbarscan@gmail.com", Email = "ylmazbarscan@gmail.com" };
-            await userManager.CreateAsync(testAdmin, "Y!m@z13ar$C@n");
+            testAdmin = new ApplicationUser { UserName = "admin@ahgmezunlari.org", Email = "admin@ahgmezunlari.org" };
+            await userManager.CreateAsync(testAdmin, "Ahgaol1994");
             await userManager.AddToRoleAsync(testAdmin, "Admin");
-
+            
         }
 
 

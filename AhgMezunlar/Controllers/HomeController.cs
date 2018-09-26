@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AhgMezunlar.Controllers
 {
+    
     public class HomeController : Controller
     {
 
@@ -23,7 +24,7 @@ namespace AhgMezunlar.Controllers
 
         public IActionResult Index()
         {
-            return View(sliderRepository.GetSliderImages());
+            return View(sliderRepository.GetSliderImages().ToList());
         }
 
 
