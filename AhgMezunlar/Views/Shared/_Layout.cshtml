@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
@@ -9,6 +9,11 @@
     <link href="~/lib/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/css/layout.css" rel="stylesheet" />
     <link href="~/css/style.css" rel="stylesheet" />
+    <meta name="google-site-verification" content="MVoZADuBtFP3NTwrtYyamdzgkksLFLmeW7GUAc2tD-M" />
+    <meta name="description" content="Ahmet Hamdi Gökbayrak Anadolu Öğretmen ve Fen Lisesi Mezunlar Derneği" />
+    <meta name="author" content="Barış Can Yılmaz baris@bariscanyilmaz.com" />
+    <meta name="keywords" content="Ahmet Hamdi Gökbayrak Anadolu Öğretmen ve Fen Lisesi Mezunlar Derneği" />
+
 </head>
 <body id="top">
     <!--Menubar-->
@@ -16,47 +21,47 @@
         <header id="header" class="hoc clear">
             <div id="logo" class="fl_left">
                 <h1>
-                    <a href="/">AHMET HAMDİ GÖKBAYRAK</a>
+                    <a name="Homepage" href="/">AHMET HAMDİ GÖKBAYRAK</a>
                 </h1>
                 <p>Anadolu Öğretmen ve Fen Lisesi Mezunları Derneği </p>
             </div>
             <nav id="mainav" class="fl_right">
                 <ul class="clear">
                     <li class="active">
-                        <a href="/">Ana sayfa</a>
+                        <a name="Homepage" href="/">Ana sayfa</a>
                     </li>
                     <li>
-                        <a class="drop" href="/Society">Derneğimiz</a>
+                        <a name="Dernek" class="drop" href="/Society">Derneğimiz</a>
                         <ul class="nav-pill-list">
                             <li>
-                                <a data-pill="#tuzuk" href="/Society#tuzuk">Tuzuk</a>
+                                <a name="Tuzuk" data-pill="#tuzuk" href="/Society#tuzuk">Tuzuk</a>
                             </li>
                             <li>
-                                <a data-pill="#yk" href="/Society#yk">Yönetim Kurulu</a>
+                                <a name="YonetimKurulu" data-pill="#yk" href="/Society#yk">Yönetim Kurulu</a>
                             </li>
                             <li>
-                                <a data-pill="#hak" href="/Society#hak">Hakkımızda</a>
+                                <a name="Hakkimizda" data-pill="#hak" href="/Society#hak">Hakkımızda</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#contact">İletişim</a>
+                        <a name="Contact" href="#contact">İletişim</a>
                     </li>
                     <li>
-                        <a href="/Moments">Anılarımız</a>
+                        <a name="Moments" href="/Moments">Anılarımız</a>
                     </li>
                     <li>
-                        <a href="/Events">Duyurularımız</a>
+                        <a name="Events" href="/Events">Duyurularımız</a>
                     </li>
                     <li>
 
                         @if (User.Identity.IsAuthenticated == true)
                         {
-                            <a href="/Account/Logout"><i class="fa fa-2x fa-sign-out"></i></a>
+                            <a name="Logout" href="/Account/Logout"><i class="fa fa-2x fa-sign-out"></i></a>
                         }
                         else
                         {
-                            <a href="/Admin"><i class="fa fa-2x fa-sign-in"></i></a>
+                            <a name="Admin Panel" href="/Admin"><i class="fa fa-2x fa-sign-in"></i></a>
                         }
 
 
@@ -65,7 +70,7 @@
             </nav>
             <nav class="justify-content-end navbar-expand-mlg p-0 bg-tranparent navbar-light">
                 <!-- Toggler/collapsibe Button -->
-                <button id="toggle-button" class="navbar-toggler fl_right" type="button" data-toggle="collapse">
+                <button name="togglebutton" id="toggle-button" class="navbar-toggler fl_right" type="button" data-toggle="collapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -73,33 +78,33 @@
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" style="color: var(--custom-orange);" href="/">ANA SAYFA</a>
+                            <a name="Homepage" class="nav-link" style="color: var(--custom-orange);" href="/">ANA SAYFA</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Society">DERNEK</a>
+                            <a  name="Dernek"  class="nav-link" href="/Society">DERNEK</a>
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/Society#hak">Hakkımızda</a>
+                                    <a name="Hakkimizda" class="nav-link" href="/Society#hak">Hakkımızda</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/Society#yk">Yönetim Kurulu</a>
+                                    <a name="YonetimKurulu" class="nav-link" href="/Society#yk">Yönetim Kurulu</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/Society#tuzuk">Tüzük</a>
+                                    <a name="Tuzuk" class="nav-link" href="/Society#tuzuk">Tüzük</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">İLETİŞİM</a>
+                            <a name="Iletisim" class="nav-link" href="#contact">İLETİŞİM</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Moments">ANILARIMIZ</a>
+                            <a name="Moments" class="nav-link" href="/Moments">ANILARIMIZ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Events">DUYURULARIMIZ</a>
+                            <a name="Duyurular" class="nav-link" href="/Events">DUYURULARIMIZ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Admin"><i class="fa fa-2x fa-sign-in"></i></a>
+                            <a name="AdminPanel" class="nav-link" href="/Admin"><i class="fa fa-2x fa-sign-in"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -129,7 +134,7 @@
             <div class="form-group row">
                 <div class="col-md-6">
                     <label for="contactemail">Email</label>
-                    <input type="email"  pattern="[a-z0-9._%+-]+@@[a-z0-9.-]+\.[a-z]{2,3}$" class="form-control form-control-lg" id="contactemail" name="Email" placeholder="Zorunlu alan" required>
+                    <input type="email"  pattern="[a-z0-9._%+-]+@@[a-z0-9.-]+\.[a-z]{2,3}$" class="form-control form-control-lg" id="contactemail" name="contactemail" placeholder="Zorunlu alan" required>
                 </div>
                 <div class="col-md-6">
                     <label for="phone">Telefon Numaranız</label>
@@ -151,32 +156,32 @@
             <P>Anadolu ve Fen Lisesi Mezunları Derneği</P>
             <ul class="faico clear">
                 <li>
-                    <a class="faicon-facebook" href="https://www.facebook.com/AHG-A%C3%96L-ve-Fen-Lisesi-Mezunlar%C4%B1-Derne%C4%9Fi-150822592208596/" target="_blank">
+                    <a name="facebookpage" class="faicon-facebook" href="https://www.facebook.com/AHG-A%C3%96L-ve-Fen-Lisesi-Mezunlar%C4%B1-Derne%C4%9Fi-150822592208596/" target="_blank">
                         <i class="fa fa-facebook"></i>
                     </a>
                 </li>
                 <li>
-                    <a class="faicon-twitter" href="https://www.instagram.com/ahgaolmd" target="_blank">
+                    <a name="instagrampage" class="faicon-twitter" href="https://www.instagram.com/ahgaolmd" target="_blank">
                         <i class="fa fa-instagram"></i>
                     </a>
                 </li>
                 <li>
-                    <a class="faicon-facebook" href="mailto:ahgaolmd@gmail.com" >
+                    <a name="mail" class="faicon-facebook" href="mailto:ahgaolmd@gmail.com" >
                         <i class="fa fa-envelope"></i>
                     </a>
                 </li>
                 <li>
-                    <a class="faicon-linkedin" href="tel:05553066762">
+                    <a name="phone" class="faicon-linkedin" href="tel:05553066762">
                         <i class="fa fa-phone"></i>
                     </a>
                 </li>
                 <li>
-                    <a class="faicon-google-plus" href="https://www.youtube.com/">
+                    <a name="youtube" class="faicon-google-plus" href="https://www.youtube.com/">
                         <i class="fa fa-youtube"></i>
                     </a>
                 </li>
                 <li>
-                    <a class="faicon-vk" href="http://ahgfenlisesi.meb.k12.tr/">
+                    <a name="browser" class="faicon-vk" href="http://ahgfenlisesi.meb.k12.tr/">
                         <i class="fa fa-safari"></i>
                     </a>
                 </li>
@@ -185,13 +190,13 @@
     </div>
 
     <!--shortcut buttons-->
-    <a id="backtotop" href="#top">
+    <a name="top" id="backtotop" href="#top">
         <i class="fa fa-chevron-up"></i>
     </a>
-    <a id="gotofacebook" href="https://www.facebook.com/AHG-A%C3%96L-ve-Fen-Lisesi-Mezunlar%C4%B1-Derne%C4%9Fi-150822592208596/" target="_blank">
+    <a name="gotofacebook" id="gotofacebook" href="https://www.facebook.com/AHG-A%C3%96L-ve-Fen-Lisesi-Mezunlar%C4%B1-Derne%C4%9Fi-150822592208596/" target="_blank">
         <i class="fa fa-facebook"></i>
     </a>
-    <a id="gotoinstagram" href="https://www.instagram.com/ahgaolmd" target="_blank">
+    <a name="gotoinstagram" id="gotoinstagram" href="https://www.instagram.com/ahgaolmd" target="_blank">
         <i class="fa fa-instagram"></i>
     </a>
 
@@ -202,7 +207,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button name="closebutton" type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -210,7 +215,7 @@
                 <div class="modal-body">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button name="closebutton" type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
                 </div>
             </div>
         </div>

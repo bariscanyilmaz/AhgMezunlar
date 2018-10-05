@@ -6,6 +6,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\ahgmezunlar</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\PublishAhg</_PublishTargetUrl>
   </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=host5.birhost.net%3bInitial Catalog=bariscan_AhgmezunDb%3bpersist security info=True%3buser id=ahgmezun%3bpassword=Ahgdb1994</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
 </Project>

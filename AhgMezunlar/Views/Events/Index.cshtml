@@ -1,6 +1,6 @@
 ﻿@model List<Events>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Etkinlikler";
 }
 
 <!--Duyurular-->
@@ -21,12 +21,10 @@
                 <tr><th class="w-10">#</th><th class="w-20">Başlık</th><th>İçerik</th></tr>
             </thead>
             <tbody>
-                <tr data-source="~/img/Defaults/320x220.png" data-content=""><td>1</td><td class="row-title">Pilav Günü</td><td class="row-preview-content">Geleneksel Pilav Günümüze Tüm öğretmen, öğrenci ve velilerimiz davetlidir...</td></tr>
-
 
                 @for (int i = 0; i < Model.Count(); i++)
                 {
-                    <tr data-source="@(Model[i].PhotoPath==null?"/img/Defaults/320x220.png":"/img/Events/"+Model[i].PhotoPath)" data-content="@Model[i].Content"><td></td><td class="row-title">@Model[i].Title</td><td class="row-preview-content">@Html.Raw(Model[i].Content)</td></tr>
+                    <tr data-source="@(Model[i].PhotoPath==null?"img/Defaults/320x220.png":"/img/Events/"+Model[i].PhotoPath)" data-content="@Model[i].Content"><td></td><td class="row-title">@Model[i].Title</td><td class="row-preview-content">@Html.Raw(Model[i].Content)</td></tr>
                 }
 
                 @*@foreach (var item in Model)
