@@ -94,7 +94,7 @@ namespace AhgMezunlar
             if (testAdmin != null) return;
 
             testAdmin = new ApplicationUser { UserName = "admin@ahgmezunlari.org", Email = "admin@ahgmezunlari.org" };
-            await userManager.CreateAsync(testAdmin, "Ahgaol1994");
+            await userManager.CreateAsync(testAdmin, "password");
             await userManager.AddToRoleAsync(testAdmin, "Admin");
             
         }
